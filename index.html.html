@@ -1,0 +1,2518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Kumar Singh — Complete Interview Prep</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0f1e;color:#e2e8f0;min-height:100vh}
+.hero{background:linear-gradient(135deg,#0d1f3c,#0a0f1e 50%,#150d2e);padding:36px 24px 28px;text-align:center;border-bottom:1px solid #1e3a5f55}
+.hero h1{font-size:1.9rem;font-weight:900;background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.hero p{color:#94a3b8;font-size:.9rem;margin-bottom:18px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.badge{background:#1e293b;border:1px solid #3b82f655;color:#93c5fd;padding:3px 11px;border-radius:20px;font-size:.73rem;font-weight:600}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;background:#0d1626;border-bottom:1px solid #1e293b}
+.stat{text-align:center;padding:14px 24px;border-right:1px solid #1e293b}
+.stat:last-child{border-right:none}
+.stat-num{font-size:1.6rem;font-weight:900;color:#60a5fa}
+.stat-label{font-size:.7rem;color:#475569;text-transform:uppercase;letter-spacing:.06em}
+.controls{padding:12px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#0a0f1edd;border-bottom:1px solid #1e293b;position:sticky;top:0;z-index:200;backdrop-filter:blur(10px)}
+.search-box{flex:1;min-width:180px;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:7px 13px;color:#e2e8f0;font-size:.88rem;outline:none}
+.search-box:focus{border-color:#3b82f6}
+.filter-btn{padding:6px 13px;border-radius:7px;border:1px solid #334155;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:.76rem;font-weight:700;transition:all .18s;white-space:nowrap}
+.filter-btn:hover,.filter-btn.active{background:#1e40af;border-color:#3b82f6;color:#fff}
+.progress-track{height:3px;background:#1e293b}
+.progress-bar{height:3px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#f472b6);transition:width .4s;width:0%}
+.main{max-width:960px;margin:0 auto;padding:20px 14px}
+.section-wrap{margin-bottom:18px;border-radius:12px;overflow:hidden;border:1px solid #1e293b}
+.section-header{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.section-header:hover{background:#1e293b44}
+.sec-icon{font-size:1.3rem}
+.sec-title{font-size:1rem;font-weight:800;flex:1}
+.sec-count{font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:12px;background:#1e293b}
+.sec-arrow{color:#475569;font-size:.8rem;transition:transform .25s}
+.sec-arrow.open{transform:rotate(90deg)}
+.section-body{background:#0d1626}
+.level-strip{padding:6px 18px;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-top:1px solid #1e2938;display:flex;align-items:center;gap:6px}
+.qa-card{border-top:1px solid #1e29384a;transition:background .15s}
+.qa-card:hover{background:#1e293b22}
+.qa-card.basic{border-left:3px solid #22c55e}
+.qa-card.intermediate{border-left:3px solid #f59e0b}
+.qa-card.advanced{border-left:3px solid #ef4444}
+.qa-q{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;cursor:pointer;user-select:none}
+.qnum{background:#0a0f1e;color:#60a5fa;border-radius:5px;padding:1px 7px;font-size:.7rem;font-weight:900;min-width:30px;text-align:center;margin-top:2px;flex-shrink:0}
+.qtext{flex:1;font-size:.88rem;font-weight:600;color:#e2e8f0;line-height:1.55}
+.diff{font-size:.66rem;font-weight:800;padding:2px 7px;border-radius:9px;flex-shrink:0;align-self:flex-start;margin-top:2px}
+.diff.basic{background:#14532d;color:#4ade80}
+.diff.intermediate{background:#451a03;color:#fbbf24}
+.diff.advanced{background:#450a0a;color:#f87171}
+.check-btn{background:none;border:1px solid #334155;color:#475569;border-radius:5px;padding:2px 7px;font-size:.66rem;cursor:pointer;transition:all .2s;flex-shrink:0;align-self:flex-start;margin-top:2px}
+.check-btn:hover{border-color:#22c55e;color:#22c55e}
+.check-btn.done{background:#14532d;border-color:#22c55e;color:#4ade80}
+.qa-a{display:none;padding:2px 16px 16px 16px;animation:sd .2s ease}
+.qa-a.open{display:block}
+@keyframes sd{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.ans-text{color:#cbd5e1;font-size:.84rem;line-height:1.8;white-space:pre-wrap;margin-bottom:8px;padding-left:4px}
+table.ct{width:100%;border-collapse:collapse;margin:10px 0;font-size:.79rem;border-radius:8px;overflow:hidden}
+table.ct th{background:#1a2f50;color:#93c5fd;padding:8px 12px;text-align:left;font-weight:700}
+table.ct td{padding:7px 12px;border-bottom:1px solid #1e29384a;color:#cbd5e1}
+table.ct tr:last-child td{border-bottom:none}
+table.ct tr:hover td{background:#1e293b33}
+.cb{background:#060d1a;border:1px solid #1e3a5f;border-radius:9px;overflow:hidden;margin:10px 0}
+.cbh{display:flex;justify-content:space-between;align-items:center;padding:6px 14px;background:#0a1929;border-bottom:1px solid #1e3a5f}
+.cbl{font-size:.68rem;color:#60a5fa;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.cpb{background:none;border:1px solid #1e3a5f;color:#475569;border-radius:4px;padding:2px 8px;font-size:.65rem;cursor:pointer;transition:all .2s}
+.cpb:hover{border-color:#3b82f6;color:#93c5fd}
+.cpb.ok{border-color:#22c55e;color:#4ade80}
+.cb pre{padding:14px;overflow-x:auto;margin:0}
+.cb code{font-family:'Cascadia Code','Fira Code','Consolas',monospace;font-size:.78rem;color:#e2e8f0;line-height:1.7}
+.tip{background:#0f2347;border-left:3px solid #3b82f6;border-radius:0 7px 7px 0;padding:10px 14px;margin:10px 0;font-size:.82rem;color:#93c5fd;line-height:1.65}
+.rtag{display:inline-block;background:#172554;border:1px solid #1e40af55;color:#93c5fd;padding:3px 9px;border-radius:5px;font-size:.71rem;margin-top:6px}
+.arch{background:#060d1a;border:1px solid #1e3a5f;border-radius:8px;padding:16px;margin:10px 0;font-family:'Cascadia Code','Consolas',monospace;font-size:.77rem;color:#94a3b8;line-height:1.9;overflow-x:auto;white-space:pre}
+.no-results{text-align:center;padding:60px;color:#475569}
+.qa-card.done-card .qtext{text-decoration:line-through;opacity:.5}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-thumb{background:#1e293b;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>🎯 Senior .NET Full Stack — Complete Interview Guide 2026</h1>
+  <p><strong>Ashish Kumar Singh</strong> · 7+ Years · C# · .NET Core · Web API · SignalR · Azure · React · SQL · DSA · Clean Architecture</p>
+  <div class="badges">
+    <span class="badge">C# .NET Core</span><span class="badge">Web API</span><span class="badge">SignalR</span><span class="badge">JWT Auth</span>
+    <span class="badge">SQL Server</span><span class="badge">EF Core</span><span class="badge">Dapper</span><span class="badge">Azure</span>
+    <span class="badge">React.js</span><span class="badge">Microservices</span><span class="badge">Clean Architecture</span>
+    <span class="badge">CQRS</span><span class="badge">Unit of Work</span><span class="badge">Repository Pattern</span><span class="badge">DSA</span>
+  </div>
+</div>
+<div class="stats">
+  <div class="stat"><div class="stat-num" id="totalStat">0</div><div class="stat-label">Questions</div></div>
+  <div class="stat"><div class="stat-num" style="color:#4ade80" id="basicStat">0</div><div class="stat-label">Basic</div></div>
+  <div class="stat"><div class="stat-num" style="color:#fbbf24" id="intStat">0</div><div class="stat-label">Intermediate</div></div>
+  <div class="stat"><div class="stat-num" style="color:#f87171" id="advStat">0</div><div class="stat-label">Advanced</div></div>
+  <div class="stat"><div class="stat-num" style="color:#a78bfa" id="doneStat">0</div><div class="stat-label">Completed</div></div>
+</div>
+<div class="controls">
+  <input class="search-box" type="text" id="searchBox" placeholder="🔍 Search topic, keyword, pattern..." oninput="doFilter()">
+  <button class="filter-btn active" onclick="setLevel('all',this)">All</button>
+  <button class="filter-btn" onclick="setLevel('basic',this)" style="color:#4ade80">🟢 Basic</button>
+  <button class="filter-btn" onclick="setLevel('intermediate',this)" style="color:#fbbf24">🟡 Intermediate</button>
+  <button class="filter-btn" onclick="setLevel('advanced',this)" style="color:#f87171">🔴 Advanced</button>
+  <button class="filter-btn" onclick="expandAll()">⬇ Expand All</button>
+  <button class="filter-btn" onclick="collapseAll()">⬆ Collapse</button>
+  <button class="filter-btn" onclick="resetProgress()" style="color:#f87171">↺ Reset</button>
+</div>
+<div class="progress-track"><div class="progress-bar" id="pbar"></div></div>
+<div class="main" id="root"></div>
+<script>
+const DATA = [
+{section:"C# Fundamentals & Concept Comparisons",icon:"💙",color:"#3b82f6",questions:[
+{id:1,level:"basic",q:"Delegate vs Event — key difference",
+a:`Delegate: type-safe function pointer — anyone can invoke it.
+Event: a delegate WRAPPED with publisher/subscriber semantics — only the declaring class can RAISE it; outsiders can only subscribe (+=) or unsubscribe (-=).`,
+table:[["","Delegate","Event"],["Invoke externally","✅ Anyone","❌ Only owner class"],["Assignment (=)","✅ Can overwrite","❌ Only += / -="],["Use case","Callbacks, strategy","UI clicks, domain events, FCM triggers"]],
+code:`// Delegate — anyone can invoke
+public delegate void Notify(string msg);
+public Notify OnMessage;           // ← can be invoked from outside
+
+// Event — only class can raise
+public event Notify OnMessage;    // ← outsiders can only +=/-=
+
+// Real example (from ZCS — FCM push notifications)
+public class SessionService {
+    public event EventHandler<string> ParticipantJoined;
+    public void Join(string name) => ParticipantJoined?.Invoke(this, name);
+}
+var svc = new SessionService();
+svc.ParticipantJoined += (s, name) => SendFcmAsync(name); // ✅
+svc.ParticipantJoined.Invoke(null, "test");                // ❌ compile error`,lang:"csharp"},
+
+{id:2,level:"basic",q:"Static vs Singleton — when to use which?",
+a:`Static: no instance, lives forever, not injectable, not mockable.
+Singleton via DI: one managed instance, implements interface, testable — ALWAYS prefer this in .NET Core apps.`,
+table:[["","Static","Singleton (DI)"],["Instance","None (class-level)","One managed by container"],["DI Injectable","❌","✅"],["Mockable in tests","❌","✅ via interface"],["Use case","Utility/pure functions","Services: cache, config, logger"]],
+code:`// Static — only for stateless pure utilities
+public static class DateHelper {
+    public static DateTime ToIst(DateTime utc) =>
+        TimeZoneInfo.ConvertTimeFromUtc(utc,
+            TimeZoneInfo.FindSystemTimeZoneById("India Standard Time"));
+}
+
+// Singleton via DI — PREFERRED for services
+public interface ICacheService { Task<T> GetAsync<T>(string key); }
+public class RedisCacheService : ICacheService { /* ... */ }
+
+// Registration
+services.AddSingleton<ICacheService, RedisCacheService>();
+// Now injectable, mockable in tests ✅`,lang:"csharp"},
+
+{id:3,level:"basic",q:"Thread vs Task — complete comparison",
+table:[["","Thread","Task"],["Level","Low-level OS thread","High-level (ThreadPool wrapper)"],["Return value","❌ void only","✅ Task<T>"],["async/await","❌","✅"],["Cancellation","Manual volatile flag","✅ CancellationToken"],["Cost","~1MB stack, expensive","Lightweight"],["Use today","Rarely","Always prefer Task"]],
+code:`// Thread — low level, avoid
+var t = new Thread(() => DoWork()) { IsBackground = true };
+t.Start();
+
+// Task — preferred
+var result = await Task.Run(() => HeavyComputation()); // CPU-bound
+
+// I/O-bound async — NO new thread created, frees current thread
+public async Task<Order> GetOrderAsync(int id) =>
+    await _context.Orders.FindAsync(id); // thread freed during DB wait
+
+// Run multiple concurrently
+await Task.WhenAll(FetchUsersAsync(), FetchOrdersAsync(), FetchStatsAsync());`,lang:"csharp"},
+
+{id:4,level:"basic",q:"Async / Await — how it works internally + deadlock pitfall",
+a:`async/await is sugar over Task/TAP. When await hits an I/O call, the current thread is FREED (not blocked) — returned to the pool to serve other requests. The continuation resumes when I/O completes.
+
+Deadlock trap: calling .Result or .Wait() in ASP.NET classic blocks the sync context needed by the continuation.`,
+code:`// ✅ Correct — always await
+public async Task<string> GetDataAsync() {
+    var data = await _httpClient.GetStringAsync(url); // thread freed here
+    return data.ToUpper(); // resumes on completion
+}
+
+// ❌ Deadlock in old ASP.NET
+var result = GetDataAsync().Result; // BLOCKS sync context → deadlock!
+
+// ✅ ConfigureAwait(false) in library code
+var raw = await _httpClient.GetStringAsync(url).ConfigureAwait(false);
+
+// Fire-and-forget (use carefully, log exceptions)
+_ = Task.Run(async () => {
+    try { await SendEmailAsync(); }
+    catch (Exception ex) { _logger.LogError(ex, "Email failed"); }
+});`,lang:"csharp"},
+
+{id:5,level:"basic",q:"Concurrency vs Parallelism in .NET",
+table:[["","Concurrency","Parallelism"],["Concept","Tasks make progress, may not run simultaneously","Tasks run simultaneously on multiple cores"],["Best for","I/O-bound (DB, HTTP, file)","CPU-bound (math, image, batch)"],[".NET tools","async/await, Task.WhenAll","Parallel.ForEach, PLINQ"],["Analogy","1 chef switching between 3 dishes","3 chefs each cooking 1 dish"]],
+code:`// CONCURRENCY — 3 I/O calls start simultaneously, 1 thread
+var t1 = _userRepo.GetAllAsync();
+var t2 = _orderRepo.GetRecentAsync();
+var t3 = _analyticsRepo.GetStatsAsync();
+await Task.WhenAll(t1, t2, t3); // all 3 run concurrently
+
+// PARALLELISM — use multiple CPU cores (CPU-bound work)
+Parallel.ForEach(transactions,
+    new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount },
+    txn => ProcessTransaction(txn));
+
+// PLINQ — parallel LINQ
+var results = hugeDataset.AsParallel()
+    .WithDegreeOfParallelism(4)
+    .Where(x => ExpensiveFilter(x))
+    .Select(x => Transform(x))
+    .ToList();`,lang:"csharp"},
+
+{id:6,level:"basic",q:"Boxing vs Unboxing — performance impact",
+a:`Boxing: value type → object (heap allocation + copy). Unboxing: object → value type (cast + copy). Both are implicit/explicit and carry heap allocation cost. Avoid in hot paths.`,
+code:`int num = 42;
+object boxed = num;       // ⬆ BOXING: heap allocation!
+int back   = (int)boxed;  // ⬇ UNBOXING: type check + copy
+
+// ❌ Performance trap — ArrayList boxes every int
+var al = new ArrayList();
+for (int i = 0; i < 100_000; i++) al.Add(i);  // 100K boxing ops!
+
+// ✅ Generic — NO boxing
+var list = new List<int>();
+for (int i = 0; i < 100_000; i++) list.Add(i); // no boxing
+
+// ❌ string.Format with value types causes boxing
+var s1 = string.Format("{0} items", 42);   // boxes 42
+// ✅ interpolation avoids boxing in modern C#
+var s2 = $"{42} items";`,lang:"csharp"},
+
+{id:7,level:"basic",q:"const vs readonly — when to use each",
+table:[["","const","readonly"],["Set when","Compile time","Runtime (declaration or constructor)"],["Implicitly static","✅ Yes","❌ Can be instance or static"],["Types allowed","Primitives, string, enum","Any type incl. objects"],["Change after set","❌ Never","❌ After constructor exits"],["Use case","Fixed magic numbers","Values from config/DI at startup"]],
+code:`public class Config {
+    public const int MaxRetries = 3;          // baked into IL at compile time
+    public const string ApiVersion = "v1";
+
+    public readonly string ConnectionString;  // set once at runtime
+    public readonly int TimeoutMs;
+    public static readonly DateTime AppStart = DateTime.UtcNow; // static readonly
+
+    public Config(IConfiguration cfg) {
+        ConnectionString = cfg["DbConn"];     // set in constructor ✅
+        TimeoutMs = int.Parse(cfg["Timeout"]);
+    }
+    // ConnectionString = "other"; ← ❌ outside constructor — compile error
+}`,lang:"csharp"},
+
+{id:8,level:"basic",q:"ref vs out — complete difference",
+table:[["","ref","out"],["Must init before call","✅ Yes","❌ No"],["Method must assign","❌ Optional","✅ Must before return"],["Direction","Bi-directional","Output only"],["Use case","Modify existing value","Return multiple values (TryParse)"]],
+code:`// ref — variable must already have a value
+int x = 10;
+Swap(ref x, ref x); // must be initialized
+
+void Swap(ref int a, ref int b) { (a, b) = (b, a); }
+
+// out — no init required, method MUST assign
+if (TryGetUser(5, out User user)) {
+    Console.WriteLine(user.Name);
+}
+
+bool TryGetUser(int id, out User result) {
+    result = _db.Find(id);   // must assign
+    return result != null;
+}
+
+// C# 7+ inline out
+if (int.TryParse("42", out int n)) Console.WriteLine(n); // ✅`,lang:"csharp"},
+
+{id:9,level:"basic",q:"var vs dynamic vs object — three-way comparison",
+table:[["","var","dynamic","object"],["Type resolution","Compile time","Runtime","Compile time"],["Type-safe","✅","❌","✅ but needs cast"],["IntelliSense","✅ Full","❌ None","Only object members"],["Performance","Same as explicit","DLR overhead","Boxing overhead"],["Use case","Avoid verbose names","Interop/unknown JSON","Legacy / base type"]],
+code:`var name   = "Ashish";      // string — still strongly typed
+var orders = GetOrders();   // compiler infers List<Order>
+
+dynamic dyn = "hello";
+Console.WriteLine(dyn.Length);  // ✅ runtime
+dyn = 42;
+dyn.NonExistent();  // ❌ RuntimeBinderException — no compile check!
+
+object obj = "hello";
+// obj.ToUpper(); ❌ compile error — must cast
+string s = (string)obj;
+s.ToUpper(); // ✅ after cast`,lang:"csharp"},
+
+{id:10,level:"basic",q:"Property vs Field, Overloading vs Overriding, string vs StringBuilder",
+a:`Three common quick-fire questions combined:`,
+code:`// PROPERTY vs FIELD
+public class User {
+    private string _name;          // field — backing store
+    public string Name {           // property — encapsulated access
+        get => _name;
+        set => _name = value?.Trim() ?? throw new ArgumentNullException();
+    }
+    public string Display => $"[{Name}]"; // computed property, no backing field
+}
+
+// METHOD OVERLOADING — same class, same name, different params (compile-time)
+public int Add(int a, int b)       => a + b;
+public double Add(double a, double b) => a + b;
+
+// METHOD OVERRIDING — derived class changes base behavior (runtime)
+public class Shape { public virtual double Area() => 0; }
+public class Circle : Shape {
+    public double R { get; set; }
+    public override double Area() => Math.PI * R * R; // runtime dispatch
+}
+
+// STRING vs STRINGBUILDER
+string s = "";
+for (int i = 0; i < 1000; i++) s += i; // ❌ 1000 heap allocs!
+
+var sb = new StringBuilder();
+for (int i = 0; i < 1000; i++) sb.Append(i);
+string result = sb.ToString(); // ✅ one buffer, one final string`,lang:"csharp"},
+
+{id:11,level:"basic",q:"Struct vs Class — value vs reference semantics",
+table:[["","struct","class"],["Memory","Stack (usually)","Heap"],["Assignment","Deep copy","Reference copy"],["Null allowed","❌ (use Nullable<T>)","✅"],["Inheritance","❌","✅"],["Best for","Small immutable data","Entities with identity/behavior"]],
+code:`// Good struct — small, immutable value object (DDD concept)
+public readonly struct Money {
+    public decimal Amount   { get; init; }
+    public string  Currency { get; init; }
+    public Money Add(Money other) {
+        if (Currency != other.Currency) throw new InvalidOperationException();
+        return new Money { Amount = Amount + other.Amount, Currency = Currency };
+    }
+    public override string ToString() => $"{Currency} {Amount:N2}";
+}
+
+var price = new Money { Amount = 99.99m, Currency = "INR" };
+var tax   = new Money { Amount = 18m,    Currency = "INR" };
+var total = price.Add(tax); // INR 117.99 — no heap allocation`,lang:"csharp"},
+
+{id:12,level:"basic",q:"Array vs ArrayList vs List<T> — generics vs non-generics",
+table:[["","Array","ArrayList","List<T>"],["Size","Fixed","Dynamic","Dynamic"],["Type safety","✅","❌ (object)","✅"],["Boxing","❌","✅ (value types)","❌"],["Performance","Fastest","Slow (boxing)","Fast"],["Recommendation","Fixed-size","Legacy, avoid","Always use this"]],
+code:`// Array — fixed size
+int[] arr = new int[5] { 1,2,3,4,5 };
+
+// ArrayList — legacy, untyped ❌
+var al = new ArrayList();
+al.Add(1); al.Add("oops"); // mixed types, no error!
+
+// List<T> — preferred ✅
+var nums = new List<int> { 1, 2, 3 };
+nums.Add(4);
+nums.Remove(2);
+nums.Sort();
+
+// Other generics to know
+var dict  = new Dictionary<int, string>();
+var queue = new Queue<string>();
+var stack = new Stack<int>();
+var set   = new HashSet<string>();`,lang:"csharp"},
+
+{id:13,level:"intermediate",q:"IEnumerable vs IQueryable — critical difference for EF Core",
+table:[["","IEnumerable<T>","IQueryable<T>"],["Execution","In-memory LINQ","Deferred, translates to SQL"],["Where runs","Client (C# memory)","Server (SQL WHERE clause)"],["Performance","Loads all data first","Filters at DB"],["Use case","In-memory collections","EF Core, ORM queries"]],
+code:`// IQueryable — builds SQL, executes on ToList()
+IQueryable<Order> query = _context.Orders.Where(o => o.IsActive);
+query = query.Where(o => o.CustomerId == 5); // still SQL, not executed
+var list = await query.ToListAsync();         // NOW executes: SELECT...WHERE
+
+// IEnumerable — filters IN MEMORY (dangerous on large tables!)
+IEnumerable<Order> enumQ = _context.Orders.AsEnumerable(); // loads ALL rows!
+var filtered = enumQ.Where(o => o.IsActive); // C# filter on full table
+
+// Projection — only fetch what you need
+var dtos = await _context.Orders
+    .Where(o => o.CustomerId == 5)
+    .Select(o => new { o.Id, o.Amount })  // only 2 columns in SQL
+    .ToListAsync();`,lang:"csharp"},
+
+{id:14,level:"intermediate",q:"LINQ — Where vs Select vs SelectMany vs GroupBy vs Aggregate",
+code:`var orders = GetOrders();
+
+// WHERE — filter (SQL WHERE)
+var active = orders.Where(o => o.Status == "Active");
+
+// SELECT — project/transform (SQL SELECT columns)
+var ids   = orders.Select(o => o.Id);
+var dtos  = orders.Select(o => new OrderDto { Id = o.Id, Amt = o.Amount });
+
+// SELECTMANY — flatten nested collections
+var items = orders.SelectMany(o => o.LineItems); // all items from all orders
+
+// GROUPBY — aggregate
+var byStatus = orders
+    .GroupBy(o => o.Status)
+    .Select(g => new { g.Key, Count = g.Count(), Total = g.Sum(o => o.Amount) });
+
+// ORDERBY chain
+var sorted = orders.OrderByDescending(o => o.Date).ThenBy(o => o.CustomerId);
+
+// AGGREGATES
+decimal total  = orders.Sum(o => o.Amount);
+decimal avg    = orders.Average(o => o.Amount);
+bool   hasLate = orders.Any(o => o.DueDate < DateTime.Today);
+bool   allPaid = orders.All(o => o.IsPaid);
+
+// FIRST vs SINGLE vs FIRSTORDEFAULT
+var first  = orders.FirstOrDefault(o => o.Id == 5);  // null if missing, ok if multiple
+var single = orders.SingleOrDefault(o => o.Id == 5); // null if missing, throws if >1`,lang:"csharp"},
+
+{id:15,level:"basic",q:"Lazy Loading vs Eager Loading — EF Core + general concept",
+table:[["","Eager Loading","Lazy Loading","Explicit Loading"],["How","Include()","Auto on property access","Entry().Reference().LoadAsync()"],["Queries","1 JOIN","N+1 risk per access","On demand (you control)"],["Setup","None","UseLazyLoadingProxies()","None"],["Best for","Known required related data","Rarely accessed optional data","Fine-grained control"]],
+code:`// 1. EAGER — load related in one query (recommended)
+var orders = await _context.Orders
+    .Include(o => o.Customer)
+    .Include(o => o.Items).ThenInclude(i => i.Product)
+    .Where(o => o.Status == "Active")
+    .ToListAsync(); // one round-trip
+
+// 2. LAZY — auto-loads on access (needs proxy package)
+// services.AddDbContext...UseLazyLoadingProxies()
+var order = await _context.Orders.FindAsync(1);
+var name  = order.Customer.Name; // triggers a NEW query — N+1 risk!
+
+// 3. EXPLICIT — manual control
+var o2 = await _context.Orders.FindAsync(1);
+await _context.Entry(o2).Reference(x => x.Customer).LoadAsync();
+
+// 4. PROJECTION — best performance (only what you need)
+var summary = await _context.Orders
+    .Select(o => new { o.Id, CustomerName = o.Customer.Name, o.Amount })
+    .ToListAsync();`,lang:"csharp"},
+
+{id:16,level:"basic",q:"== vs .Equals() — when they differ",
+code:`// VALUE TYPES — both compare values
+int a = 5, b = 5;
+a == b;      // true
+a.Equals(b); // true
+
+// STRING — == is overloaded to compare content
+string s1 = "hello", s2 = "hello";
+s1 == s2;      // true (content, even different refs)
+s1.Equals(s2); // true (content)
+
+// REFERENCE TYPES — == compares REFERENCE by default
+var o1 = new Order { Id = 1 };
+var o2 = new Order { Id = 1 };
+o1 == o2;        // false (different objects!)
+o1.Equals(o2);   // false unless Equals overridden
+
+// Override for value semantics (DDD Value Objects)
+public class Money {
+    public decimal Amount { get; }
+    public string  Currency { get; }
+    public override bool Equals(object obj) =>
+        obj is Money m && m.Amount == Amount && m.Currency == Currency;
+    public override int GetHashCode() =>
+        HashCode.Combine(Amount, Currency);
+}
+
+// SAFE null check
+string s = null;
+s == null;                     // ✅ true
+object.ReferenceEquals(s, null); // ✅ true
+// s.Equals(null) → ❌ NullReferenceException!`,lang:"csharp"},
+]},
+{section:"Web API, JWT & SignalR",icon:"🌐",color:"#8b5cf6",questions:[
+{id:17,level:"basic",q:"REST HTTP Verbs — GET POST PUT PATCH DELETE",
+table:[["Verb","Use","Idempotent","Body"],["GET","Retrieve","✅","❌"],["POST","Create","❌","✅"],["PUT","Replace entire resource","✅","✅"],["PATCH","Partial update","❌","✅"],["DELETE","Remove","✅","❌"]],
+code:`[ApiController]
+[Route("api/[controller]")]
+public class OrdersController : ControllerBase {
+    [HttpGet]                       // GET /api/orders
+    public async Task<IActionResult> GetAll() => Ok(await _svc.GetAllAsync());
+
+    [HttpGet("{id}")]               // GET /api/orders/5
+    public async Task<IActionResult> GetById(int id) {
+        var order = await _svc.GetByIdAsync(id);
+        return order == null ? NotFound() : Ok(order);
+    }
+
+    [HttpPost]                      // POST /api/orders
+    public async Task<IActionResult> Create(CreateOrderDto dto) {
+        var id = await _svc.CreateAsync(dto);
+        return CreatedAtAction(nameof(GetById), new { id }, new { id });
+    }
+
+    [HttpPut("{id}")]               // PUT /api/orders/5
+    public async Task<IActionResult> Update(int id, UpdateOrderDto dto) {
+        await _svc.UpdateAsync(id, dto);
+        return NoContent();
+    }
+
+    [HttpPatch("{id}/status")]      // PATCH /api/orders/5/status
+    public async Task<IActionResult> UpdateStatus(int id, [FromBody] string status) {
+        await _svc.UpdateStatusAsync(id, status);
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]            // DELETE /api/orders/5
+    public async Task<IActionResult> Delete(int id) {
+        await _svc.DeleteAsync(id);
+        return NoContent();
+    }
+}`,lang:"csharp"},
+
+{id:18,level:"intermediate",q:"JWT Authentication + Refresh Token — complete flow",
+a:`Access token: short-lived (15 min), signed JWT. Refresh token: long-lived (7 days), stored in DB, rotated on use.`,
+code:`// 1. Generate Access Token
+private string GenerateAccessToken(AppUser user) {
+    var claims = new[] {
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+        new Claim(ClaimTypes.Email, user.Email),
+        new Claim(ClaimTypes.Role, user.Role),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
+    var key   = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Secret"]));
+    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+    var token = new JwtSecurityToken(
+        issuer: _config["Jwt:Issuer"],
+        audience: _config["Jwt:Audience"],
+        claims: claims,
+        expires: DateTime.UtcNow.AddMinutes(15),
+        signingCredentials: creds);
+    return new JwtSecurityTokenHandler().WriteToken(token);
+}
+
+// 2. Login — return both tokens
+public async Task<TokenResponse> LoginAsync(LoginDto dto) {
+    var user = await _userMgr.FindByEmailAsync(dto.Email);
+    if (!await _userMgr.CheckPasswordAsync(user, dto.Password))
+        throw new UnauthorizedException();
+
+    var accessToken  = GenerateAccessToken(user);
+    var refreshToken = new RefreshToken {
+        Token     = Guid.NewGuid().ToString("N"),
+        UserId    = user.Id,
+        ExpiresAt = DateTime.UtcNow.AddDays(7),
+        IsRevoked = false
+    };
+    _context.RefreshTokens.Add(refreshToken);
+    await _context.SaveChangesAsync();
+    return new TokenResponse(accessToken, refreshToken.Token);
+}
+
+// 3. Refresh — validate and rotate
+public async Task<TokenResponse> RefreshAsync(string refreshToken) {
+    var stored = await _context.RefreshTokens
+        .FirstOrDefaultAsync(t => t.Token == refreshToken && !t.IsRevoked);
+    if (stored == null || stored.ExpiresAt < DateTime.UtcNow)
+        throw new UnauthorizedException("Invalid or expired refresh token");
+
+    stored.IsRevoked = true;      // one-time use, rotate it
+    var user = await _userMgr.FindByIdAsync(stored.UserId);
+    var newAccess  = GenerateAccessToken(user);
+    var newRefresh = new RefreshToken {
+        Token = Guid.NewGuid().ToString("N"), UserId = user.Id,
+        ExpiresAt = DateTime.UtcNow.AddDays(7)
+    };
+    _context.RefreshTokens.Add(newRefresh);
+    await _context.SaveChangesAsync();
+    return new TokenResponse(newAccess, newRefresh.Token);
+}`,lang:"csharp"},
+
+{id:19,level:"intermediate",q:"API Versioning, Rate Limiting, CORS — production setup",
+code:`// Program.cs — production-grade API setup
+var builder = WebApplication.CreateBuilder(args);
+
+// API Versioning
+builder.Services.AddApiVersioning(opt => {
+    opt.DefaultApiVersion = new ApiVersion(1, 0);
+    opt.AssumeDefaultVersionWhenUnspecified = true;
+    opt.ReportApiVersions = true;
+    opt.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),
+        new HeaderApiVersionReader("X-Api-Version"));
+});
+
+// Rate Limiting (.NET 7+)
+builder.Services.AddRateLimiter(opt => {
+    opt.AddFixedWindowLimiter("api", o => {
+        o.PermitLimit = 100; o.Window = TimeSpan.FromMinutes(1);
+        o.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+    });
+    opt.RejectionStatusCode = 429;
+});
+
+// CORS
+builder.Services.AddCors(opt => opt.AddPolicy("AppPolicy", p =>
+    p.WithOrigins("https://zcs.example.com", "https://app.example.com")
+     .AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+
+var app = builder.Build();
+app.UseRateLimiter();
+app.UseCors("AppPolicy");
+app.UseAuthentication();
+app.UseAuthorization();`,lang:"csharp"},
+
+{id:20,level:"intermediate",q:"SignalR — what it is, how it works, real-time use cases",
+a:`SignalR is a library for adding real-time bi-directional communication to .NET apps. It automatically chooses the best transport: WebSockets → Server-Sent Events → Long Polling.
+
+Use cases: live dashboards, chat, notifications, live order tracking, collaborative editing.
+
+Transport negotiation:
+1. WebSockets (preferred — full duplex, persistent connection)
+2. Server-Sent Events (server → client only)
+3. Long Polling (fallback — repeated HTTP requests)`,
+code:`// 1. SERVER — Hub class
+public class OrderHub : Hub {
+    // Called by client
+    public async Task SendOrderUpdate(string orderId, string status) {
+        // Broadcast to all connected clients
+        await Clients.All.SendAsync("OrderStatusChanged", orderId, status);
+        // Broadcast to a group
+        await Clients.Group($"order-{orderId}").SendAsync("OrderStatusChanged", status);
+        // Send to specific user
+        await Clients.User(Context.UserIdentifier).SendAsync("YourOrderUpdated", status);
+    }
+
+    public override async Task OnConnectedAsync() {
+        var orderId = Context.GetHttpContext()?.Request.Query["orderId"];
+        if (!string.IsNullOrEmpty(orderId))
+            await Groups.AddToGroupAsync(Context.ConnectionId, $"order-{orderId}");
+        await base.OnConnectedAsync();
+    }
+}
+
+// 2. SERVER — Registration in Program.cs
+builder.Services.AddSignalR(opt => {
+    opt.EnableDetailedErrors = true;
+    opt.KeepAliveInterval = TimeSpan.FromSeconds(15);
+    opt.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
+});
+app.MapHub<OrderHub>("/hubs/orders");
+
+// 3. Push from background service (NOT inside Hub)
+public class OrderService {
+    private readonly IHubContext<OrderHub> _hubContext;
+    public OrderService(IHubContext<OrderHub> hubContext) =>
+        _hubContext = hubContext;
+
+    public async Task UpdateOrderStatusAsync(string orderId, string status) {
+        await _dbRepo.UpdateStatusAsync(orderId, status);
+        // Notify all clients in the group
+        await _hubContext.Clients
+            .Group($"order-{orderId}")
+            .SendAsync("OrderStatusChanged", new { orderId, status, timestamp = DateTime.UtcNow });
+    }
+}`,lang:"csharp"},
+
+{id:21,level:"intermediate",q:"SignalR — React/JS client integration",
+code:`// npm install @microsoft/signalr
+
+// React — useSignalR custom hook
+import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { useEffect, useRef, useState } from 'react';
+
+function useOrderUpdates(orderId) {
+    const [status, setStatus] = useState(null);
+    const connRef = useRef(null);
+
+    useEffect(() => {
+        const connection = new HubConnectionBuilder()
+            .withUrl(\`/hubs/orders?orderId=\${orderId}\`, {
+                accessTokenFactory: () => localStorage.getItem('accessToken')
+            })
+            .withAutomaticReconnect([0, 2000, 5000, 10000]) // retry delays ms
+            .configureLogging(LogLevel.Warning)
+            .build();
+
+        connection.on('OrderStatusChanged', (data) => {
+            setStatus(data.status);
+        });
+
+        connection.start().catch(err => console.error('SignalR error:', err));
+        connRef.current = connection;
+
+        return () => { connection.stop(); }; // cleanup on unmount
+    }, [orderId]);
+
+    return status;
+}
+
+// Usage in component
+function OrderTracker({ orderId }) {
+    const liveStatus = useOrderUpdates(orderId);
+    return <div>Status: {liveStatus ?? 'Loading...'}</div>;
+}`,lang:"jsx"},
+
+{id:22,level:"advanced",q:"SignalR vs WebSockets vs SSE — when to choose what",
+table:[["","SignalR","Raw WebSockets","Server-Sent Events (SSE)"],["Direction","Bi-directional","Bi-directional","Server → Client only"],["Fallback","✅ Auto (SSE/LP)","❌ Manual","❌"],["Groups/Users","✅ Built-in","Manual","❌"],["Scaling (Redis)","✅ Built-in backplane","Manual","Manual"],["Auth integration","✅ JWT","Manual","Manual"],["Use case","Real-time apps","Custom protocols, gaming","Feeds, notifications only"]],
+code:`// SignalR with Redis backplane for multi-server scaling
+// NuGet: Microsoft.AspNetCore.SignalR.StackExchangeRedis
+builder.Services.AddSignalR()
+    .AddStackExchangeRedis(cfg["Redis:Connection"], options => {
+        options.Configuration.ChannelPrefix = RedisChannel.Literal("myapp");
+    });
+
+// SignalR with JWT auth
+builder.Services.AddAuthentication()
+    .AddJwtBearer(opt => {
+        opt.Events = new JwtBearerEvents {
+            OnMessageReceived = ctx => {
+                // SignalR passes token as query string (WebSockets can't set headers)
+                var token = ctx.Request.Query["access_token"];
+                var path  = ctx.HttpContext.Request.Path;
+                if (!string.IsNullOrEmpty(token) && path.StartsWithSegments("/hubs"))
+                    ctx.Token = token;
+                return Task.CompletedTask;
+            }
+        };
+    });`,lang:"csharp"},
+]},
+{section:"SQL Server — Complete Reference",icon:"🗄️",color:"#10b981",questions:[
+{id:23,level:"basic",q:"JOINs — INNER vs LEFT vs RIGHT vs FULL vs CROSS",
+code:`-- INNER JOIN: only matching rows in BOTH tables
+SELECT c.Name, o.OrderId FROM Customers c
+INNER JOIN Orders o ON c.Id = o.CustomerId;
+
+-- LEFT JOIN: ALL left rows + matched right (NULL if no match)
+SELECT c.Name, o.OrderId FROM Customers c
+LEFT JOIN Orders o ON c.Id = o.CustomerId;
+-- Find customers with NO orders:
+WHERE o.OrderId IS NULL
+
+-- FULL OUTER JOIN: all rows from both, NULLs where no match
+SELECT c.Name, o.OrderId FROM Customers c
+FULL OUTER JOIN Orders o ON c.Id = o.CustomerId;
+
+-- SELF JOIN — find employees and their managers
+SELECT e.Name AS Emp, m.Name AS Manager
+FROM Employees e LEFT JOIN Employees m ON e.ManagerId = m.Id;`,lang:"sql"},
+
+{id:24,level:"basic",q:"WHERE vs HAVING — GROUP BY filtering",
+code:`-- WHERE filters ROWS before grouping
+-- HAVING filters GROUPS after aggregation
+
+SELECT CustomerId,
+       COUNT(*)    AS OrderCount,
+       SUM(Amount) AS TotalSpend
+FROM Orders
+WHERE  OrderDate >= '2024-01-01'  -- ✅ filter rows BEFORE GROUP BY
+GROUP BY CustomerId
+HAVING COUNT(*) > 5               -- ✅ filter groups (needs aggregation)
+   AND SUM(Amount) > 50000;`,lang:"sql"},
+
+{id:25,level:"basic",q:"UNION vs UNION ALL",
+table:[["","UNION","UNION ALL"],["Duplicates","❌ Removes duplicates","✅ Keeps all rows"],["Performance","Slower (sort + dedup)","Faster (no dedup)"],["Use when","Need distinct result","Know data is unique / want all"],["Column match","✅ Same count + compatible types","✅ Same"]],
+code:`-- UNION — removes duplicates (like DISTINCT)
+SELECT Email FROM Customers
+UNION
+SELECT Email FROM Leads;
+
+-- UNION ALL — keeps all rows (faster)
+SELECT ProductId, SaleDate, Amount, 'Online' AS Channel FROM OnlineSales
+UNION ALL
+SELECT ProductId, SaleDate, Amount, 'Store'  AS Channel FROM StoreSales
+ORDER BY SaleDate DESC;`,lang:"sql"},
+
+{id:26,level:"basic",q:"DELETE vs TRUNCATE — differences",
+table:[["","DELETE","TRUNCATE"],["WHERE clause","✅ Can filter rows","❌ All rows"],["Rollback","✅ (logged)","✅ (minimally logged)"],["Triggers","✅ Fires","❌ Does not fire"],["IDENTITY reset","❌","✅ Resets"],["Speed","Slower (row-by-row log)","Much faster"],["Use case","Specific rows","Clear entire table"]],
+code:`-- DELETE — selective, logged, triggers fire
+DELETE FROM Orders WHERE Status = 'Cancelled';
+DELETE FROM Orders; -- all rows, but slow on large tables
+
+-- TRUNCATE — fast, resets identity, no triggers
+TRUNCATE TABLE TempImportData;
+
+-- DROP — removes table structure too
+DROP TABLE TempData;`,lang:"sql"},
+
+{id:27,level:"basic",q:"Primary Key vs Unique Key",
+table:[["","Primary Key","Unique Key"],["Nulls","❌ Never","✅ One NULL (SQL Server)"],["Count per table","1 only","Multiple"],["Clustered index","✅ By default","❌ Non-clustered"],["Purpose","Row identity","Business uniqueness constraint"]],
+code:`CREATE TABLE Users (
+    Id       INT          PRIMARY KEY IDENTITY(1,1), -- PK
+    Email    VARCHAR(255) UNIQUE NOT NULL,            -- unique constraint
+    Username VARCHAR(100) UNIQUE,                    -- allows 1 NULL
+    Phone    VARCHAR(20)
+);
+
+-- Composite PK
+CREATE TABLE OrderItems (
+    OrderId   INT NOT NULL,
+    ProductId INT NOT NULL,
+    Qty       INT NOT NULL,
+    PRIMARY KEY (OrderId, ProductId)
+);
+
+-- Add unique constraint later
+ALTER TABLE Users ADD CONSTRAINT UQ_Users_Phone UNIQUE (Phone);`,lang:"sql"},
+
+{id:28,level:"intermediate",q:"Clustered vs Non-Clustered Index",
+table:[["","Clustered Index","Non-Clustered Index"],["Per table","1 only","Up to 999"],["Data storage","Physically sorts data","Separate B-tree + pointers"],["Default on","Primary Key","Other columns"],["Range queries","Very fast","Good"],["When to use","Date ranges, PK lookups","Foreign keys, WHERE/JOIN columns"]],
+code:`-- Clustered: physically orders rows (usually on PK)
+CREATE CLUSTERED INDEX IX_Orders_Date ON Orders(OrderDate);
+
+-- Non-clustered + included columns (covering index — avoids key lookup)
+CREATE NONCLUSTERED INDEX IX_Orders_Customer
+ON Orders(CustomerId, Status)
+INCLUDE (OrderDate, TotalAmount);
+
+-- Filtered index — partial (specific condition)
+CREATE NONCLUSTERED INDEX IX_ActiveOrders
+ON Orders(CustomerId)
+WHERE Status = 'Active'; -- only indexes active orders
+
+-- View missing indexes suggested by SQL Server
+SELECT * FROM sys.dm_db_missing_index_details
+WHERE database_id = DB_ID()
+ORDER BY avg_total_user_cost DESC;`,lang:"sql"},
+
+{id:29,level:"intermediate",q:"Temp Table vs CTE — when to use each",
+table:[["","CTE (WITH clause)","Temp Table (#)"],["Persistence","Query duration only","Session duration"],["Indexable","❌","✅"],["Reusable in query","✅ (multiple refs)","✅"],["Statistics","❌","✅ (better plans)"],["Use case","Readable subqueries, recursion","Multi-step ETL, large intermediate results"]],
+code:`-- CTE — clean, readable, disposable
+WITH TopCustomers AS (
+    SELECT CustomerId, SUM(Amount) AS Total
+    FROM Orders WHERE Year = 2024
+    GROUP BY CustomerId
+    HAVING SUM(Amount) > 100000
+),
+RankedCustomers AS (
+    SELECT *, RANK() OVER (ORDER BY Total DESC) AS Rnk
+    FROM TopCustomers
+)
+SELECT c.Name, r.Total, r.Rnk
+FROM RankedCustomers r
+JOIN Customers c ON c.Id = r.CustomerId
+WHERE r.Rnk <= 10;
+
+-- TEMP TABLE — for multi-step processing (like UBI reconciliation)
+CREATE TABLE #DailyRecon (
+    AccountId INT, TotalDebit DECIMAL(18,2), TotalCredit DECIMAL(18,2),
+    INDEX IX_Account (AccountId)
+);
+INSERT INTO #DailyRecon
+SELECT AccountId,
+    SUM(CASE WHEN TxnType='D' THEN Amount ELSE 0 END),
+    SUM(CASE WHEN TxnType='C' THEN Amount ELSE 0 END)
+FROM Transactions WHERE TxnDate = CAST(GETDATE() AS DATE)
+GROUP BY AccountId;
+
+SELECT * FROM #DailyRecon WHERE ABS(TotalDebit-TotalCredit) > 0.01;
+DROP TABLE #DailyRecon;`,lang:"sql"},
+
+{id:30,level:"intermediate",q:"Stored Procedure vs Function",
+table:[["","Stored Procedure","Function (Scalar/TVF)"],["DML (INSERT/UPDATE)","✅","❌ (usually)"],["Called in SELECT","❌","✅"],["Return type","Result sets, OUT params","Single value or table"],["Transaction control","✅","❌"],["Use case","Business logic, ETL, CRUD","Calculations, reusable expressions"]],
+code:`-- Stored Procedure
+CREATE PROCEDURE GetOrdersByStatus
+    @Status VARCHAR(20),
+    @StartDate DATE,
+    @TotalCount INT OUTPUT
+AS BEGIN
+    SELECT o.Id, o.Amount, c.Name
+    FROM Orders o JOIN Customers c ON o.CustomerId = c.Id
+    WHERE o.Status = @Status AND o.OrderDate >= @StartDate;
+
+    SELECT @TotalCount = @@ROWCOUNT;
+END;
+
+-- Inline Table-Valued Function (composable, better performance than scalar)
+CREATE FUNCTION GetTopCustomers(@TopN INT)
+RETURNS TABLE AS RETURN (
+    SELECT TOP (@TopN) CustomerId, SUM(Amount) AS Total
+    FROM Orders GROUP BY CustomerId ORDER BY Total DESC
+);
+
+-- Use in query
+SELECT c.Name, t.Total
+FROM dbo.GetTopCustomers(10) t
+JOIN Customers c ON c.Id = t.CustomerId;`,lang:"sql"},
+
+{id:31,level:"advanced",q:"Window Functions — ROW_NUMBER, RANK, LAG, SUM OVER (banking example)",
+code:`-- Banking reconciliation window functions (from your UBI/BOI experience)
+SELECT
+    AccountId,
+    TxnDate,
+    Amount,
+    TxnType,
+
+    -- Running balance
+    SUM(Amount) OVER (
+        PARTITION BY AccountId
+        ORDER BY TxnDate
+        ROWS UNBOUNDED PRECEDING
+    ) AS RunningBalance,
+
+    -- Transaction rank per account per day
+    ROW_NUMBER() OVER (PARTITION BY AccountId ORDER BY TxnDate) AS TxnSeq,
+
+    -- RANK vs DENSE_RANK (handles ties differently)
+    RANK()       OVER (ORDER BY Amount DESC) AS Rnk,       -- 1,2,2,4
+    DENSE_RANK() OVER (ORDER BY Amount DESC) AS DenseRnk,  -- 1,2,2,3
+
+    -- Previous / next transaction
+    LAG (Amount, 1, 0) OVER (PARTITION BY AccountId ORDER BY TxnDate) AS PrevAmt,
+    LEAD(Amount, 1, 0) OVER (PARTITION BY AccountId ORDER BY TxnDate) AS NextAmt,
+
+    -- % of account total
+    ROUND(Amount * 100.0 / SUM(Amount) OVER (PARTITION BY AccountId), 2) AS PctOfTotal
+
+FROM Transactions
+WHERE TxnDate BETWEEN '2024-01-01' AND '2024-12-31'
+ORDER BY AccountId, TxnDate;`,lang:"sql"},
+]},
+{section:"Azure Services",icon:"☁️",color:"#06b6d4",questions:[
+{id:32,level:"basic",q:"Azure Blob Storage — containers, upload, SAS URL",
+code:`// Setup
+var client = new BlobServiceClient(configuration["StorageConn"]);
+var container = client.GetBlobContainerClient("zcs-files");
+await container.CreateIfNotExistsAsync(PublicAccessType.None);
+
+// Upload file
+var blob = container.GetBlobClient($"{userId}/{Guid.NewGuid()}/{fileName}");
+await blob.UploadAsync(stream, new BlobUploadOptions {
+    HttpHeaders = new BlobHttpHeaders { ContentType = contentType },
+    Metadata    = new Dictionary<string,string> { ["uploadedBy"] = userId }
+});
+
+// Generate time-limited SAS URL (read-only, 1 hour)
+var sasUri = blob.GenerateSasUri(BlobSasPermissions.Read,
+    DateTimeOffset.UtcNow.AddHours(1));
+return sasUri.ToString();
+
+// Delete
+await blob.DeleteIfExistsAsync();`,lang:"csharp"},
+
+{id:33,level:"basic",q:"Azure Key Vault — secrets management with Managed Identity",
+code:`// Program.cs — no passwords in code!
+builder.Configuration.AddAzureKeyVault(
+    new Uri($"https://{vaultName}.vault.azure.net/"),
+    new DefaultAzureCredential()); // uses Managed Identity in Azure
+
+// Use like normal config — transparent
+var connStr    = config["SqlConnectionString"];   // from Key Vault
+var zoomApiKey = config["ZoomApiKey"];            // from Key Vault
+
+// Direct access
+var secretClient = new SecretClient(
+    new Uri("https://myvault.vault.azure.net/"),
+    new DefaultAzureCredential());
+var secret = await secretClient.GetSecretAsync("DbPassword");`,lang:"csharp"},
+
+{id:34,level:"intermediate",q:"Azure Functions — Timer, Blob, HTTP triggers",
+code:`// Timer trigger — cleanup files daily at 2AM
+[FunctionName("CleanupOldFiles")]
+public async Task RunTimer(
+    [TimerTrigger("0 0 2 * * *")] TimerInfo timer, ILogger log) {
+    await _blobService.DeleteFilesOlderThanAsync(days: 30);
+    log.LogInformation("Cleanup completed");
+}
+
+// Blob trigger — virus scan on upload (used in ZCS)
+[FunctionName("ScanUploadedFile")]
+public async Task RunBlob(
+    [BlobTrigger("temp/{blobName}", Connection = "StorageConn")] Stream blob,
+    string blobName, ILogger log) {
+    var safe = await _scanService.ScanAsync(blob);
+    if (safe)
+        await _blobService.MoveToPermAsync(blobName);
+    else {
+        await _blobService.DeleteFromTempAsync(blobName);
+        await _alertService.NotifySecurityTeamAsync(blobName);
+    }
+}
+
+// HTTP trigger — lightweight webhook (Zoom events)
+[FunctionName("ZoomWebhook")]
+public async Task<IActionResult> HandleZoom(
+    [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req) {
+    var body = await new StreamReader(req.Body).ReadToEndAsync();
+    await _zoomService.ProcessEventAsync(body);
+    return new OkResult();
+}`,lang:"csharp"},
+
+{id:35,level:"intermediate",q:"Azure DevOps CI/CD Pipeline — multi-stage YAML",
+code:`# azure-pipelines.yml
+trigger:
+  branches: { include: [main, release/*] }
+  
+variables:
+  buildConfig: Release
+  dotnetVersion: '8.0.x'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildAndTest
+    pool: { vmImage: ubuntu-latest }
+    steps:
+    - task: UseDotNet@2
+      inputs: { version: $(dotnetVersion) }
+
+    - task: DotNetCoreCLI@2
+      displayName: Restore
+      inputs: { command: restore, projects: '**/*.csproj' }
+
+    - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs: { command: build, arguments: '--configuration $(buildConfig) --no-restore' }
+
+    - task: DotNetCoreCLI@2
+      displayName: Test
+      inputs:
+        command: test
+        arguments: '--collect:"XPlat Code Coverage"'
+
+    - task: SonarQubePrepare@5          # from your ZCS work
+      inputs: { SonarQube: SonarConn, scannerMode: MSBuild }
+
+- stage: DeployStaging
+  dependsOn: Build
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'],'refs/heads/main'))
+  jobs:
+  - deployment: Staging
+    environment: Staging
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureWebApp@1
+            inputs: { azureSubscription: 'MySubscription', appName: 'zcs-api-staging' }`,lang:"yaml"},
+
+{id:36,level:"advanced",q:"App Service vs Azure Functions vs AKS — when to use",
+table:[["","App Service","Azure Functions","AKS"],["Type","PaaS Web/API host","Serverless event-driven","Container orchestration"],["Runtime","Always on","Event triggered","Always on (pods)"],["Cost","Fixed plan","Per execution","VM nodes"],["Cold start","❌","Yes (Consumption)","❌"],["Scaling","Auto/manual","Automatic","HPA/KEDA"],["Best for","REST APIs, web apps","Triggers, cron jobs","Complex microservices"]],},
+]},
+
+{section:"React.js",icon:"⚛️",color:"#38bdf8",questions:[
+{id:37,level:"basic",q:"State vs Props, useState vs useEffect",
+code:`// PROPS — parent → child (read-only)
+function UserCard({ name, role }) {
+    const [expanded, setExpanded] = useState(false); // own STATE
+
+    // useEffect — runs after render; dependency array controls when
+    useEffect(() => {
+        document.title = \`\${name}'s Profile\`;
+        return () => { document.title = 'App'; }; // cleanup
+    }, [name]); // re-runs only when name changes
+
+    return (
+        <div>
+            <h2>{name} — {role}</h2>
+            <button onClick={() => setExpanded(!expanded)}>Details</button>
+            {expanded && <p>Senior developer details here</p>}
+        </div>
+    );
+}`,lang:"jsx"},
+
+{id:38,level:"basic",q:"Context API — global state without prop drilling",
+code:`// AuthContext.jsx
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+    const [user, setUser] = useState(null);
+
+    const login = async (creds) => {
+        const { data } = await api.post('/auth/login', creds);
+        setUser(data.user);
+        localStorage.setItem('accessToken', data.accessToken);
+    };
+    const logout = () => { setUser(null); localStorage.clear(); };
+
+    return (
+        <AuthContext.Provider value={{ user, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
+}
+
+export const useAuth = () => useContext(AuthContext);
+
+// Any component — no prop drilling!
+function Navbar() {
+    const { user, logout } = useAuth();
+    return <nav>{user ? <button onClick={logout}>Logout</button> : null}</nav>;
+}`,lang:"jsx"},
+
+{id:39,level:"intermediate",q:"Axios interceptors for JWT + auto refresh",
+code:`// api.js
+const api = axios.create({ baseURL: process.env.REACT_APP_API_URL });
+
+// Add token to every request
+api.interceptors.request.use(cfg => {
+    const token = localStorage.getItem('accessToken');
+    if (token) cfg.headers.Authorization = \`Bearer \${token}\`;
+    return cfg;
+});
+
+// Auto-refresh on 401
+api.interceptors.response.use(
+    res => res,
+    async err => {
+        const orig = err.config;
+        if (err.response?.status === 401 && !orig._retry) {
+            orig._retry = true;
+            try {
+                const refresh = localStorage.getItem('refreshToken');
+                const { data } = await axios.post('/auth/refresh', { refreshToken: refresh });
+                localStorage.setItem('accessToken', data.accessToken);
+                orig.headers.Authorization = \`Bearer \${data.accessToken}\`;
+                return api(orig); // retry original request
+            } catch { window.location.href = '/login'; }
+        }
+        return Promise.reject(err);
+    }
+);`,lang:"jsx"},
+
+{id:40,level:"advanced",q:"React performance — memo, useMemo, useCallback, lazy loading",
+code:`// React.memo — skip re-render if props unchanged
+const OrderRow = React.memo(({ order, onDelete }) => (
+    <tr>
+        <td>{order.id}</td>
+        <td>{order.amount}</td>
+        <td><button onClick={() => onDelete(order.id)}>Delete</button></td>
+    </tr>
+));
+
+function OrderTable({ orders }) {
+    // useMemo — only recompute when orders changes
+    const total = useMemo(() =>
+        orders.reduce((s, o) => s + o.amount, 0), [orders]);
+
+    // useCallback — stable function reference (prevents OrderRow re-render)
+    const handleDelete = useCallback(async (id) => {
+        await api.delete(\`/orders/\${id}\`);
+        setOrders(prev => prev.filter(o => o.id !== id));
+    }, []); // no deps — never changes
+
+    return (
+        <>
+            <p>Total: {total}</p>
+            <table>
+                {orders.map(o => <OrderRow key={o.id} order={o} onDelete={handleDelete} />)}
+            </table>
+        </>
+    );
+}
+
+// Code splitting — lazy load heavy pages
+const Analytics = React.lazy(() => import('./pages/Analytics'));
+<Suspense fallback={<Spinner />}><Analytics /></Suspense>`,lang:"jsx"},
+]},
+
+{section:"Microservices & Design Patterns",icon:"🏗️",color:"#f59e0b",questions:[
+{id:41,level:"intermediate",q:"Dependency Injection — all three lifetimes with real examples",
+code:`// Program.cs — service registration
+var builder = WebApplication.CreateBuilder(args);
+
+// TRANSIENT — new instance every resolve (stateless, lightweight)
+builder.Services.AddTransient<IEmailService, SmtpEmailService>();
+
+// SCOPED — one instance per HTTP request (shared within same request)
+builder.Services.AddScoped<AppDbContext>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+// SINGLETON — one instance for app lifetime
+builder.Services.AddSingleton<ICacheService, RedisCacheService>();
+builder.Services.AddSingleton<IConfigService, ConfigService>();
+
+// IMPORTANT: never inject Scoped/Transient into Singleton → captive dependency bug!
+// Use IServiceScopeFactory in Singleton to create a scope when needed
+public class BackgroundWorker : BackgroundService {
+    private readonly IServiceScopeFactory _scopeFactory;
+    protected override async Task ExecuteAsync(CancellationToken ct) {
+        using var scope   = _scopeFactory.CreateScope();
+        var orderRepo = scope.ServiceProvider.GetRequiredService<IOrderRepository>();
+        await orderRepo.ProcessPendingAsync();
+    }
+}`,lang:"csharp"},
+
+{id:42,level:"intermediate",q:"Repository Pattern — abstraction over data access",
+code:`// Domain/Interfaces — NO EF Core reference here
+public interface IRepository<T> where T : class {
+    Task<T?> GetByIdAsync(int id);
+    Task<IEnumerable<T>> GetAllAsync();
+    Task AddAsync(T entity);
+    Task UpdateAsync(T entity);
+    Task DeleteAsync(int id);
+}
+
+public interface IOrderRepository : IRepository<Order> {
+    Task<IEnumerable<Order>> GetByCustomerAsync(int customerId);
+    Task<IEnumerable<Order>> GetActiveOrdersAsync();
+}
+
+// Infrastructure — EF Core implementation
+public class OrderRepository : IOrderRepository {
+    private readonly AppDbContext _ctx;
+    public OrderRepository(AppDbContext ctx) => _ctx = ctx;
+
+    public async Task<Order?> GetByIdAsync(int id) =>
+        await _ctx.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.Id == id);
+
+    public async Task<IEnumerable<Order>> GetByCustomerAsync(int cid) =>
+        await _ctx.Orders.Where(o => o.CustomerId == cid).ToListAsync();
+
+    public async Task AddAsync(Order o) { _ctx.Orders.Add(o); }
+    public async Task UpdateAsync(Order o) { _ctx.Orders.Update(o); }
+    public async Task DeleteAsync(int id) {
+        var o = await _ctx.Orders.FindAsync(id);
+        if (o != null) _ctx.Orders.Remove(o);
+    }
+}`,lang:"csharp"},
+
+{id:43,level:"intermediate",q:"Singleton Design Pattern — thread-safe implementation",
+code:`// 1. Singleton via DI (PREFERRED in .NET Core)
+services.AddSingleton<ICacheService, RedisCacheService>();
+
+// 2. Classic thread-safe singleton (when DI not available)
+public sealed class AppConfiguration {
+    private static AppConfiguration? _instance;
+    private static readonly Lock _lock = new();
+
+    public string ConnectionString { get; private set; } = "";
+
+    private AppConfiguration() { } // private constructor
+
+    public static AppConfiguration Instance {
+        get {
+            if (_instance == null) {
+                lock (_lock) {
+                    _instance ??= new AppConfiguration(); // double-check locking
+                }
+            }
+            return _instance;
+        }
+    }
+}
+
+// 3. Lazy<T> — thread-safe, lazy init (simplest)
+public sealed class Logger {
+    private static readonly Lazy<Logger> _lazy =
+        new Lazy<Logger>(() => new Logger());
+
+    public static Logger Instance => _lazy.Value;
+    private Logger() { /* init */ }
+    public void Log(string msg) => Console.WriteLine($"[LOG] {msg}");
+}`,lang:"csharp"},
+
+{id:44,level:"advanced",q:"Factory, Decorator, Strategy patterns — real-world examples",
+code:`// FACTORY PATTERN — create objects without exposing creation logic
+public interface INotificationSender {
+    Task SendAsync(string to, string message);
+}
+public class NotificationFactory {
+    private readonly IServiceProvider _sp;
+    public NotificationFactory(IServiceProvider sp) => _sp = sp;
+
+    public INotificationSender Create(string channel) => channel switch {
+        "email" => _sp.GetRequiredService<EmailSender>(),
+        "fcm"   => _sp.GetRequiredService<FcmSender>(),   // ZCS push notifications
+        "sms"   => _sp.GetRequiredService<SmsSender>(),
+        _       => throw new ArgumentException($"Unknown channel: {channel}")
+    };
+}
+
+// DECORATOR PATTERN — add behavior without modifying class
+public class CachedOrderRepository : IOrderRepository {
+    private readonly IOrderRepository _inner;
+    private readonly ICacheService    _cache;
+
+    public CachedOrderRepository(IOrderRepository inner, ICacheService cache) {
+        _inner = inner; _cache = cache;
+    }
+
+    public async Task<Order?> GetByIdAsync(int id) {
+        var key = $"order:{id}";
+        var cached = await _cache.GetAsync<Order>(key);
+        if (cached != null) return cached;
+
+        var order = await _inner.GetByIdAsync(id); // delegate to real repo
+        if (order != null) await _cache.SetAsync(key, order, TimeSpan.FromMinutes(5));
+        return order;
+    }
+}
+
+// STRATEGY PATTERN — swap algorithms at runtime
+public interface IDiscountStrategy {
+    decimal Apply(decimal price);
+}
+public class PercentDiscount : IDiscountStrategy {
+    private readonly decimal _pct;
+    public PercentDiscount(decimal pct) => _pct = pct;
+    public decimal Apply(decimal price) => price * (1 - _pct / 100);
+}
+public class FlatDiscount : IDiscountStrategy {
+    private readonly decimal _amt;
+    public FlatDiscount(decimal amt) => _amt = amt;
+    public decimal Apply(decimal price) => Math.Max(0, price - _amt);
+}`,lang:"csharp"},
+]},
+
+{section:"EF Core, Dapper & xUnit Testing",icon:"🧪",color:"#a78bfa",questions:[
+{id:45,level:"intermediate",q:"EF Core vs Dapper — when to use each",
+table:[["","EF Core","Dapper"],["Productivity","High (LINQ, migrations, change tracking)","Lower (raw SQL)"],["Complex queries","Good","Excellent"],["Performance","Good","Faster (~2×)"],["Migrations","✅","❌"],["N+1 risk","Yes (use Include)","Manual control"],["Best for","CRUD, domain logic","Reporting, complex joins, high perf"]],
+code:`// EF Core — CRUD with change tracking
+var order = await _ctx.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.Id == id);
+order.Status = "Shipped";
+await _ctx.SaveChangesAsync(); // detects change, generates UPDATE
+
+// Dapper — complex reconciliation report
+public async Task<IEnumerable<ReconResult>> GetReconAsync(DateTime date) {
+    const string sql = @"
+        SELECT t.AccountId, t.Amount,
+               SUM(t.Amount) OVER (PARTITION BY t.AccountId ORDER BY t.TxnDate
+                                   ROWS UNBOUNDED PRECEDING) AS RunningBalance,
+               b.ExpectedBalance,
+               SUM(t.Amount) OVER (...) - b.ExpectedBalance AS Variance
+        FROM Transactions t
+        JOIN ExpectedBalances b ON t.AccountId = b.AccountId
+        WHERE t.TxnDate = @Date
+        ORDER BY t.AccountId, t.TxnDate";
+    return await _conn.QueryAsync<ReconResult>(sql, new { Date = date });
+}`,lang:"csharp"},
+
+{id:46,level:"intermediate",q:"xUnit unit testing with Moq — full example",
+code:`public class OrderServiceTests {
+    private readonly Mock<IOrderRepository> _repoMock = new();
+    private readonly Mock<INotificationService> _notifyMock = new();
+    private readonly OrderService _sut;
+
+    public OrderServiceTests() =>
+        _sut = new OrderService(_repoMock.Object, _notifyMock.Object);
+
+    [Fact]
+    public async Task CreateOrder_ValidRequest_ReturnsNewId() {
+        // Arrange
+        var cmd = new CreateOrderCommand("Widget", 3);
+        _repoMock.Setup(r => r.AddAsync(It.IsAny<Order>()))
+                 .ReturnsAsync(42);
+
+        // Act
+        var result = await _sut.CreateOrderAsync(cmd);
+
+        // Assert
+        Assert.Equal(42, result);
+        _repoMock.Verify(r => r.AddAsync(It.IsAny<Order>()), Times.Once);
+        _notifyMock.Verify(n => n.SendConfirmationAsync(42), Times.Once);
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    public async Task CreateOrder_InvalidQty_ThrowsValidation(int qty) {
+        var cmd = new CreateOrderCommand("Widget", qty);
+        await Assert.ThrowsAsync<ValidationException>(
+            () => _sut.CreateOrderAsync(cmd));
+        _repoMock.Verify(r => r.AddAsync(It.IsAny<Order>()), Times.Never);
+    }
+}`,lang:"csharp"},
+]},
+{section:"DSA — Coding & Logical Problems",icon:"🧠",color:"#ec4899",questions:[
+{id:47,level:"basic",q:"Factorial — iterative, recursive, BigInteger",
+code:`// Iterative ✅ preferred
+public static long Factorial(int n) {
+    if (n < 0) throw new ArgumentException("n must be >= 0");
+    long result = 1;
+    for (int i = 2; i <= n; i++) result *= i;
+    return result;
+}
+
+// Recursive
+public static long FactRec(int n) => n <= 1 ? 1 : n * FactRec(n - 1);
+
+// BigInteger for large n (> 20 overflows long)
+public static BigInteger FactBig(int n) {
+    BigInteger r = 1;
+    for (int i = 2; i <= n; i++) r *= i;
+    return r;
+}
+
+// Tests
+Console.WriteLine(Factorial(0));    // 1
+Console.WriteLine(Factorial(5));    // 120
+Console.WriteLine(FactBig(50));     // 30414093201713378043...`,lang:"csharp"},
+
+{id:48,level:"basic",q:"Fibonacci Series — iterative, memoized, yield",
+code:`// 1. Iterative O(n) time O(1) space ✅
+public static IEnumerable<long> Fib(int n) {
+    long a = 0, b = 1;
+    for (int i = 0; i < n; i++) {
+        yield return a;
+        (a, b) = (b, a + b);
+    }
+}
+
+// 2. Nth Fibonacci
+public static long FibN(int n) {
+    if (n <= 1) return n;
+    long a = 0, b = 1;
+    for (int i = 2; i <= n; i++) (a, b) = (b, a + b);
+    return b;
+}
+
+// 3. Memoized recursion O(n) time
+private static Dictionary<int, long> _memo = new();
+public static long FibMemo(int n) {
+    if (n <= 1) return n;
+    if (_memo.TryGetValue(n, out var v)) return v;
+    return _memo[n] = FibMemo(n-1) + FibMemo(n-2);
+}
+
+// Tests
+Fib(10).ToList().ForEach(f => Console.Write(f+" ")); // 0 1 1 2 3 5 8 13 21 34
+Console.WriteLine(FibN(10));  // 55`,lang:"csharp"},
+
+{id:49,level:"basic",q:"Reverse a String and Reverse Words in Sentence",
+code:`// Reverse entire string
+public static string Reverse(string s) {
+    var c = s.ToCharArray();
+    int l = 0, r = c.Length - 1;
+    while (l < r) { (c[l], c[r]) = (c[r], c[l]); l++; r--; }
+    return new string(c);
+}
+
+// Reverse words order: "Hello World" → "World Hello"
+public static string ReverseWords(string s) {
+    var words = s.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    Array.Reverse(words);
+    return string.Join(" ", words);
+}
+
+// Reverse each word: "Hello World" → "olleH dlroW"
+public static string ReverseEachWord(string s) =>
+    string.Join(" ", s.Split(' ').Select(Reverse));
+
+// Tests
+Console.WriteLine(Reverse("Hello"));              // olleH
+Console.WriteLine(ReverseWords("I love coding")); // coding love I
+Console.WriteLine(ReverseEachWord("Hi There"));  // iH erehT`,lang:"csharp"},
+
+{id:50,level:"basic",q:"Palindrome — string, number, ignore spaces/case",
+code:`// Two-pointer O(n/2) ✅
+public static bool IsPalindrome(string s) {
+    int l = 0, r = s.Length - 1;
+    while (l < r) { if (s[l++] != s[r--]) return false; }
+    return true;
+}
+
+// Clean version — ignore spaces, punctuation, case
+public static bool IsPalindromeClean(string s) {
+    var clean = new string(s.Where(char.IsLetterOrDigit).ToArray()).ToLower();
+    return IsPalindrome(clean);
+}
+
+// Number palindrome
+public static bool IsNumPalindrome(int n) {
+    if (n < 0) return false;
+    return IsPalindrome(n.ToString());
+}
+
+// Tests
+Console.WriteLine(IsPalindrome("racecar"));              // true
+Console.WriteLine(IsPalindrome("hello"));                // false
+Console.WriteLine(IsPalindromeClean("A man, a plan, a canal: Panama")); // true
+Console.WriteLine(IsNumPalindrome(121));                 // true
+Console.WriteLine(IsNumPalindrome(123));                 // false`,lang:"csharp"},
+
+{id:51,level:"basic",q:"First Non-Repeated Character in String",
+code:`// O(n) — dictionary frequency count
+public static char? FirstUnique(string s) {
+    var freq = new Dictionary<char, int>();
+    foreach (char c in s) freq[c] = freq.GetValueOrDefault(c) + 1;
+    foreach (char c in s) if (freq[c] == 1) return c;
+    return null;
+}
+
+// LINQ one-liner
+public static char? FirstUniqueLinq(string s) =>
+    s.GroupBy(c => c).FirstOrDefault(g => g.Count() == 1)?.Key;
+
+// Tests
+Console.WriteLine(FirstUnique("aabbcde"));   // c
+Console.WriteLine(FirstUnique("aabb"));      // null
+Console.WriteLine(FirstUnique("interview")); // n`,lang:"csharp"},
+
+{id:52,level:"basic",q:"Reverse an Integer, Remove Duplicates from Array",
+code:`// Reverse integer (handle negatives + overflow)
+public static int ReverseInt(int n) {
+    long rev = 0, num = Math.Abs((long)n);
+    while (num > 0) { rev = rev * 10 + num % 10; num /= 10; }
+    if (rev > int.MaxValue) return 0; // overflow → 0
+    return n < 0 ? -(int)rev : (int)rev;
+}
+
+// Remove duplicates from SORTED array in-place (two pointers)
+public static int RemoveDuplicates(int[] nums) {
+    if (nums.Length == 0) return 0;
+    int slow = 0;
+    for (int fast = 1; fast < nums.Length; fast++)
+        if (nums[fast] != nums[slow]) nums[++slow] = nums[fast];
+    return slow + 1;
+}
+
+// Tests
+Console.WriteLine(ReverseInt(12345));    // 54321
+Console.WriteLine(ReverseInt(-456));     // -654
+Console.WriteLine(ReverseInt(1000));     // 1
+
+int[] arr = { 1,1,2,2,3,4,4,5 };
+int len = RemoveDuplicates(arr);
+Console.WriteLine(string.Join(",", arr.Take(len))); // 1,2,3,4,5`,lang:"csharp"},
+
+{id:53,level:"intermediate",q:"Two Sum — find indices of two numbers that add to target",
+code:`// O(n) — HashMap approach ✅
+public static int[] TwoSum(int[] nums, int target) {
+    var seen = new Dictionary<int, int>(); // value → index
+    for (int i = 0; i < nums.Length; i++) {
+        int complement = target - nums[i];
+        if (seen.ContainsKey(complement))
+            return new[] { seen[complement], i };
+        seen[nums[i]] = i;
+    }
+    return Array.Empty<int>();
+}
+
+// Two Sum II — sorted array, two pointers O(n) O(1)
+public static int[] TwoSumSorted(int[] nums, int target) {
+    int l = 0, r = nums.Length - 1;
+    while (l < r) {
+        int sum = nums[l] + nums[r];
+        if      (sum == target) return new[] { l + 1, r + 1 }; // 1-indexed
+        else if (sum < target)  l++;
+        else                    r--;
+    }
+    return Array.Empty<int>();
+}
+
+// Tests
+TwoSum(new[]{2,7,11,15}, 9).Dump();   // [0,1]
+TwoSum(new[]{3,2,4}, 6).Dump();       // [1,2]`,lang:"csharp"},
+
+{id:54,level:"intermediate",q:"Validate Brackets / Parentheses — Stack approach",
+code:`public static bool IsValid(string s) {
+    var stack = new Stack<char>();
+    var map = new Dictionary<char,char> {
+        [')'] = '(', ['}'] = '{', [']'] = '['
+    };
+    foreach (char c in s) {
+        if (c == '(' || c == '{' || c == '[') {
+            stack.Push(c);
+        } else if (map.ContainsKey(c)) {
+            if (stack.Count == 0 || stack.Pop() != map[c]) return false;
+        }
+    }
+    return stack.Count == 0;
+}
+
+// Tests
+Console.WriteLine(IsValid("()"));      // true
+Console.WriteLine(IsValid("()[]{}"));  // true
+Console.WriteLine(IsValid("(]"));      // false
+Console.WriteLine(IsValid("{[]}"));    // true
+Console.WriteLine(IsValid("((())"));   // false`,lang:"csharp"},
+
+{id:55,level:"intermediate",q:"Find Nth Largest Element in Array",
+code:`// Sort approach O(n log n)
+public static int NthLargest(int[] arr, int n) {
+    var unique = arr.Distinct().OrderByDescending(x => x).ToArray();
+    if (n > unique.Length) throw new ArgumentException("n too large");
+    return unique[n - 1];
+}
+
+// Min-Heap of size N — O(n log k) better for large arrays
+public static int NthLargestHeap(int[] arr, int n) {
+    var heap = new SortedList<int, int>(); // min-heap simulation
+    int i = 0;
+    foreach (int num in arr) {
+        heap.TryAdd(num, num);
+        if (heap.Count > n) heap.RemoveAt(0); // remove smallest
+    }
+    return heap.Keys[0]; // min of the top-N = Nth largest
+}
+
+// QuickSelect O(n) average
+public static int NthLargestQS(int[] arr, int n) {
+    int target = arr.Length - n; // find (n)th from start after sort
+    return QuickSelect(arr, 0, arr.Length - 1, target);
+}
+private static int QuickSelect(int[] a, int lo, int hi, int k) {
+    int pivot = a[hi], i = lo;
+    for (int j = lo; j < hi; j++)
+        if (a[j] <= pivot) (a[i], a[j]) = (a[j], a[i++]);
+    (a[i], a[hi]) = (a[hi], a[i]);
+    if (i == k) return a[i];
+    return i < k ? QuickSelect(a, i+1, hi, k) : QuickSelect(a, lo, i-1, k);
+}
+
+// Tests
+int[] nums = {3,1,4,1,5,9,2,6};
+Console.WriteLine(NthLargest(nums, 1)); // 9
+Console.WriteLine(NthLargest(nums, 2)); // 6
+Console.WriteLine(NthLargest(nums, 3)); // 5`,lang:"csharp"},
+
+{id:56,level:"intermediate",q:"Roman to Decimal conversion",
+code:`public static int RomanToInt(string s) {
+    var map = new Dictionary<char,int> {
+        ['I']=1, ['V']=5, ['X']=10, ['L']=50,
+        ['C']=100, ['D']=500, ['M']=1000
+    };
+    int result = 0;
+    for (int i = 0; i < s.Length; i++) {
+        int curr = map[s[i]];
+        int next = i+1 < s.Length ? map[s[i+1]] : 0;
+        result += curr < next ? -curr : curr; // IV = -1 + 5 = 4
+    }
+    return result;
+}
+
+// Integer to Roman
+public static string IntToRoman(int num) {
+    var vals = new[]{ 1000,900,500,400,100,90,50,40,10,9,5,4,1 };
+    var syms = new[]{ "M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I" };
+    var sb = new StringBuilder();
+    for (int i = 0; i < vals.Length; i++)
+        while (num >= vals[i]) { sb.Append(syms[i]); num -= vals[i]; }
+    return sb.ToString();
+}
+
+// Tests
+Console.WriteLine(RomanToInt("MCMXCIV")); // 1994
+Console.WriteLine(RomanToInt("MMXXVI"));  // 2026
+Console.WriteLine(IntToRoman(1994));      // MCMXCIV`,lang:"csharp"},
+
+{id:57,level:"intermediate",q:"3-Sum — find all triplets that sum to zero",
+code:`// Sort + Two Pointers O(n²) time O(1) space
+public static IList<IList<int>> ThreeSum(int[] nums) {
+    Array.Sort(nums);
+    var res = new List<IList<int>>();
+    for (int i = 0; i < nums.Length - 2; i++) {
+        if (i > 0 && nums[i] == nums[i-1]) continue; // skip dup i
+        if (nums[i] > 0) break;                        // all positive → done
+        int l = i+1, r = nums.Length - 1;
+        while (l < r) {
+            int sum = nums[i] + nums[l] + nums[r];
+            if (sum == 0) {
+                res.Add(new List<int> { nums[i], nums[l], nums[r] });
+                while (l < r && nums[l] == nums[l+1]) l++; // skip dup l
+                while (l < r && nums[r] == nums[r-1]) r--; // skip dup r
+                l++; r--;
+            } else if (sum < 0) l++;
+            else r--;
+        }
+    }
+    return res;
+}
+
+// Tests
+var r = ThreeSum(new[]{-1,0,1,2,-1,-4});
+foreach (var t in r) Console.WriteLine($"[{string.Join(",",t)}]");
+// [-1,-1,2]
+// [-1,0,1]`,lang:"csharp"},
+
+{id:58,level:"intermediate",q:"Detect Cycle in Linked List — Floyd's algorithm",
+code:`public class ListNode { public int Val; public ListNode Next; }
+
+// Floyd's Tortoise and Hare — O(n) time O(1) space ✅
+public static bool HasCycle(ListNode head) {
+    var slow = head; var fast = head;
+    while (fast?.Next != null) {
+        slow = slow.Next;
+        fast = fast.Next.Next;
+        if (slow == fast) return true; // they met → cycle!
+    }
+    return false;
+}
+
+// Find the START of cycle
+public static ListNode CycleStart(ListNode head) {
+    ListNode slow = head, fast = head;
+    while (fast?.Next != null) {
+        slow = slow.Next; fast = fast.Next.Next;
+        if (slow != fast) continue;
+        slow = head;
+        while (slow != fast) { slow = slow.Next; fast = fast.Next; }
+        return slow; // start of cycle
+    }
+    return null;
+}
+
+// Length of cycle
+public static int CycleLength(ListNode head) {
+    ListNode slow = head, fast = head;
+    while (fast?.Next != null) {
+        slow = slow.Next; fast = fast.Next.Next;
+        if (slow != fast) continue;
+        int len = 1; fast = fast.Next;
+        while (slow != fast) { fast = fast.Next; len++; }
+        return len;
+    }
+    return 0;
+}`,lang:"csharp"},
+
+{id:59,level:"advanced",q:"Binary Search — iterative + rotated sorted array",
+code:`// Standard Binary Search O(log n)
+public static int BinarySearch(int[] arr, int target) {
+    int lo = 0, hi = arr.Length - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2; // avoids overflow vs (lo+hi)/2
+        if      (arr[mid] == target) return mid;
+        else if (arr[mid] < target)  lo = mid + 1;
+        else                          hi = mid - 1;
+    }
+    return -1; // not found
+}
+
+// Search in Rotated Sorted Array [4,5,6,7,0,1,2]
+public static int SearchRotated(int[] nums, int target) {
+    int lo = 0, hi = nums.Length - 1;
+    while (lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (nums[mid] == target) return mid;
+
+        // Left half is sorted
+        if (nums[lo] <= nums[mid]) {
+            if (target >= nums[lo] && target < nums[mid]) hi = mid - 1;
+            else lo = mid + 1;
+        } else { // Right half is sorted
+            if (target > nums[mid] && target <= nums[hi]) lo = mid + 1;
+            else hi = mid - 1;
+        }
+    }
+    return -1;
+}
+
+// Tests
+Console.WriteLine(BinarySearch(new[]{1,3,5,7,9,11}, 7));  // 3
+Console.WriteLine(SearchRotated(new[]{4,5,6,7,0,1,2}, 0)); // 4`,lang:"csharp"},
+
+{id:60,level:"advanced",q:"Merge Sort and Quick Sort — implement + complexity",
+code:`// MERGE SORT — O(n log n) all cases, O(n) space — stable
+public static void MergeSort(int[] arr, int lo, int hi) {
+    if (lo >= hi) return;
+    int mid = (lo + hi) / 2;
+    MergeSort(arr, lo, mid);
+    MergeSort(arr, mid + 1, hi);
+    Merge(arr, lo, mid, hi);
+}
+private static void Merge(int[] a, int lo, int mid, int hi) {
+    int[] tmp = new int[hi - lo + 1];
+    int i = lo, j = mid + 1, k = 0;
+    while (i <= mid && j <= hi)
+        tmp[k++] = a[i] <= a[j] ? a[i++] : a[j++];
+    while (i <= mid)  tmp[k++] = a[i++];
+    while (j <= hi)   tmp[k++] = a[j++];
+    for (int x = 0; x < tmp.Length; x++) a[lo + x] = tmp[x];
+}
+
+// QUICK SORT — O(n log n) avg, O(n²) worst, O(log n) space — in-place
+public static void QuickSort(int[] arr, int lo, int hi) {
+    if (lo >= hi) return;
+    int p = Partition(arr, lo, hi);
+    QuickSort(arr, lo, p - 1);
+    QuickSort(arr, p + 1, hi);
+}
+private static int Partition(int[] a, int lo, int hi) {
+    int pivot = a[hi], i = lo;
+    for (int j = lo; j < hi; j++)
+        if (a[j] <= pivot) (a[i], a[j]) = (a[j], a[i++]);
+    (a[i], a[hi]) = (a[hi], a[i]);
+    return i;
+}
+
+// Tests
+int[] arr = {5,2,8,1,9,3};
+MergeSort(arr, 0, arr.Length-1);
+Console.WriteLine(string.Join(",", arr)); // 1,2,3,5,8,9`,lang:"csharp"},
+
+{id:61,level:"advanced",q:"Stack, Queue, Linked List — implement from scratch",
+code:`// Stack using array
+public class MyStack<T> {
+    private T[] _data = new T[16];
+    private int _top = -1;
+    public void Push(T val) {
+        if (_top == _data.Length - 1) Array.Resize(ref _data, _data.Length * 2);
+        _data[++_top] = val;
+    }
+    public T Pop()  => _top < 0 ? throw new InvalidOperationException() : _data[_top--];
+    public T Peek() => _top < 0 ? throw new InvalidOperationException() : _data[_top];
+    public bool IsEmpty => _top < 0;
+}
+
+// Queue using two stacks (classic interview)
+public class QueueUsing2Stacks<T> {
+    private Stack<T> _in  = new();
+    private Stack<T> _out = new();
+
+    public void Enqueue(T val) => _in.Push(val);
+    public T Dequeue() {
+        if (_out.Count == 0) while (_in.Count > 0) _out.Push(_in.Pop());
+        return _out.Pop();
+    }
+}
+
+// Singly Linked List — reverse in-place O(n) O(1)
+public static ListNode Reverse(ListNode head) {
+    ListNode prev = null, curr = head;
+    while (curr != null) {
+        var next = curr.Next;
+        curr.Next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+// Middle of Linked List — slow/fast pointers
+public static ListNode FindMiddle(ListNode head) {
+    var slow = head; var fast = head;
+    while (fast?.Next != null) { slow = slow.Next; fast = fast.Next.Next; }
+    return slow;
+}`,lang:"csharp"},
+
+{id:62,level:"advanced",q:"Dynamic Programming — Coin Change, Longest Common Subsequence",
+code:`// COIN CHANGE — minimum coins to make amount (DP bottom-up)
+// dp[i] = min coins to make amount i
+public static int CoinChange(int[] coins, int amount) {
+    int[] dp = new int[amount + 1];
+    Array.Fill(dp, amount + 1); // fill with "infinity"
+    dp[0] = 0;
+    for (int i = 1; i <= amount; i++)
+        foreach (int c in coins)
+            if (c <= i) dp[i] = Math.Min(dp[i], dp[i - c] + 1);
+    return dp[amount] > amount ? -1 : dp[amount];
+}
+// CoinChange([1,5,6,9], 11) → 2 (coins: 5+6)
+
+// LONGEST COMMON SUBSEQUENCE (LCS)
+public static int LCS(string s1, string s2) {
+    int m = s1.Length, n = s2.Length;
+    int[,] dp = new int[m+1, n+1];
+    for (int i = 1; i <= m; i++)
+        for (int j = 1; j <= n; j++)
+            dp[i,j] = s1[i-1] == s2[j-1]
+                ? dp[i-1,j-1] + 1
+                : Math.Max(dp[i-1,j], dp[i,j-1]);
+    return dp[m,n];
+}
+// LCS("ABCBDAB", "BDCAB") → 4 (BCAB)
+
+// MAX SUBARRAY SUM — Kadane's Algorithm O(n)
+public static int MaxSubArray(int[] nums) {
+    int max = nums[0], curr = nums[0];
+    for (int i = 1; i < nums.Length; i++) {
+        curr = Math.Max(nums[i], curr + nums[i]);
+        max  = Math.Max(max, curr);
+    }
+    return max;
+}
+// MaxSubArray([-2,1,-3,4,-1,2,1,-5,4]) → 6 (4,-1,2,1)`,lang:"csharp"},
+
+{id:63,level:"advanced",q:"Tree Traversals — BFS, DFS (Inorder, Preorder, Postorder)",
+code:`public class TreeNode { public int Val; public TreeNode Left, Right; }
+
+// INORDER (Left, Root, Right) → sorted for BST
+public static IList<int> Inorder(TreeNode root) {
+    var res = new List<int>();
+    void Dfs(TreeNode n) { if (n==null) return; Dfs(n.Left); res.Add(n.Val); Dfs(n.Right); }
+    Dfs(root); return res;
+}
+
+// PREORDER (Root, Left, Right) → copy tree
+public static IList<int> Preorder(TreeNode root) {
+    var res = new List<int>();
+    void Dfs(TreeNode n) { if (n==null) return; res.Add(n.Val); Dfs(n.Left); Dfs(n.Right); }
+    Dfs(root); return res;
+}
+
+// BFS — level-order traversal
+public static IList<IList<int>> LevelOrder(TreeNode root) {
+    var res = new List<IList<int>>();
+    if (root == null) return res;
+    var queue = new Queue<TreeNode>();
+    queue.Enqueue(root);
+    while (queue.Count > 0) {
+        int size = queue.Count;
+        var level = new List<int>();
+        for (int i = 0; i < size; i++) {
+            var node = queue.Dequeue();
+            level.Add(node.Val);
+            if (node.Left  != null) queue.Enqueue(node.Left);
+            if (node.Right != null) queue.Enqueue(node.Right);
+        }
+        res.Add(level);
+    }
+    return res;
+}
+
+// BST operations
+public static bool IsValidBST(TreeNode root, long min = long.MinValue, long max = long.MaxValue) {
+    if (root == null) return true;
+    if (root.Val <= min || root.Val >= max) return false;
+    return IsValidBST(root.Left, min, root.Val) &&
+           IsValidBST(root.Right, root.Val, max);
+}`,lang:"csharp"},
+]},
+{section:"🏆 Clean Architecture — Complete Project Sample",icon:"🏆",color:"#f43f5e",questions:[
+{id:64,level:"advanced",q:"Clean Architecture Project Structure — full folder layout",
+a:`This is the complete production-grade project structure used in market today. Every layer has a single responsibility. Dependencies always point INWARD only.`,
+code:`// ─── Solution Structure ──────────────────────────────────────────
+// MyApp.sln
+// ├── src/
+// │   ├── MyApp.Domain          ← Entities, Value Objects, Domain Events
+// │   ├── MyApp.Application     ← Use Cases, Interfaces, DTOs, Validators
+// │   ├── MyApp.Infrastructure  ← EF Core, Redis, Azure, External APIs
+// │   └── MyApp.API             ← Controllers, Middleware, DI registration
+// └── tests/
+//     ├── MyApp.UnitTests
+//     └── MyApp.IntegrationTests
+//
+// ─── Dependency Rule (MUST follow) ──────────────────────────────
+//
+//   API  →  Application  →  Domain
+//    ↘         ↓
+//    Infrastructure (implements Application interfaces)
+//
+// Domain knows NOTHING about EF Core, HTTP, Azure, etc.
+// Application knows NOTHING about EF Core or Web framework
+// ─────────────────────────────────────────────────────────────────
+
+// DOMAIN LAYER — zero dependencies
+namespace MyApp.Domain.Entities {
+    public class Order : BaseEntity {      // BaseEntity has Id, CreatedAt, UpdatedAt
+        public int    CustomerId { get; private set; }
+        public string Status     { get; private set; } = "Pending";
+        public decimal TotalAmount { get; private set; }
+
+        private readonly List<OrderItem> _items = new();
+        public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
+
+        public static Order Create(int customerId) =>
+            new Order { CustomerId = customerId };
+
+        public void AddItem(int productId, int qty, decimal price) {
+            if (qty <= 0) throw new DomainException("Quantity must be positive");
+            _items.Add(new OrderItem { ProductId = productId, Qty = qty, Price = price });
+            TotalAmount = _items.Sum(i => i.Qty * i.Price);
+        }
+
+        public void Approve() {
+            if (Status != "Pending") throw new DomainException("Only pending orders can be approved");
+            Status = "Approved";
+            AddDomainEvent(new OrderApprovedEvent(Id));
+        }
+    }
+}`,lang:"csharp"},
+
+{id:65,level:"advanced",q:"Unit of Work Pattern — wraps multiple repositories in one transaction",
+a:`Unit of Work ensures that multiple repository operations are committed as one atomic DB transaction. Without it, you'd call SaveChanges from each repo — risking partial saves.`,
+code:`// APPLICATION LAYER — interface (no EF Core reference)
+public interface IUnitOfWork : IDisposable {
+    IOrderRepository    Orders    { get; }
+    ICustomerRepository Customers { get; }
+    IProductRepository  Products  { get; }
+
+    Task<int> SaveChangesAsync(CancellationToken ct = default);
+    Task BeginTransactionAsync();
+    Task CommitTransactionAsync();
+    Task RollbackTransactionAsync();
+}
+
+// INFRASTRUCTURE LAYER — EF Core implementation
+public class UnitOfWork : IUnitOfWork {
+    private readonly AppDbContext _ctx;
+    private IDbContextTransaction? _transaction;
+
+    public IOrderRepository    Orders    { get; }
+    public ICustomerRepository Customers { get; }
+    public IProductRepository  Products  { get; }
+
+    public UnitOfWork(AppDbContext ctx,
+        IOrderRepository orders,
+        ICustomerRepository customers,
+        IProductRepository products) {
+        _ctx = ctx;
+        Orders = orders; Customers = customers; Products = products;
+    }
+
+    public Task<int> SaveChangesAsync(CancellationToken ct = default) =>
+        _ctx.SaveChangesAsync(ct);
+
+    public async Task BeginTransactionAsync() =>
+        _transaction = await _ctx.Database.BeginTransactionAsync();
+
+    public async Task CommitTransactionAsync() {
+        await _ctx.SaveChangesAsync();
+        await _transaction!.CommitAsync();
+    }
+    public async Task RollbackTransactionAsync() =>
+        await _transaction!.RollbackAsync();
+
+    public void Dispose() { _transaction?.Dispose(); _ctx.Dispose(); }
+}
+
+// USAGE in Application handler
+public class TransferStockHandler : IRequestHandler<TransferStockCommand> {
+    private readonly IUnitOfWork _uow;
+
+    public async Task Handle(TransferStockCommand cmd, CancellationToken ct) {
+        await _uow.BeginTransactionAsync();
+        try {
+            var fromProduct = await _uow.Products.GetByIdAsync(cmd.FromProductId);
+            var toProduct   = await _uow.Products.GetByIdAsync(cmd.ToProductId);
+
+            fromProduct.ReduceStock(cmd.Qty);  // domain logic
+            toProduct.AddStock(cmd.Qty);
+
+            await _uow.Products.UpdateAsync(fromProduct);
+            await _uow.Products.UpdateAsync(toProduct);
+            await _uow.CommitTransactionAsync(); // one atomic transaction ✅
+        } catch {
+            await _uow.RollbackTransactionAsync();
+            throw;
+        }
+    }
+}`,lang:"csharp"},
+
+{id:66,level:"advanced",q:"CQRS with MediatR — Commands, Queries, Handlers, Behaviors",
+a:`CQRS separates reads (Queries) from writes (Commands). MediatR dispatches them to their handlers. Pipeline Behaviors add cross-cutting concerns (logging, validation, caching) without polluting handlers.`,
+code:`// ── COMMAND (write operation) ──────────────────────────────────
+public record CreateOrderCommand(int CustomerId, List<OrderItemDto> Items)
+    : IRequest<int>;
+
+public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int> {
+    private readonly IUnitOfWork _uow;
+    private readonly IMapper     _mapper;
+
+    public CreateOrderCommandHandler(IUnitOfWork uow, IMapper mapper) {
+        _uow = uow; _mapper = mapper;
+    }
+
+    public async Task<int> Handle(CreateOrderCommand cmd, CancellationToken ct) {
+        var order = Order.Create(cmd.CustomerId);
+
+        foreach (var item in cmd.Items) {
+            var product = await _uow.Products.GetByIdAsync(item.ProductId)
+                ?? throw new NotFoundException($"Product {item.ProductId} not found");
+            order.AddItem(item.ProductId, item.Qty, product.Price);
+        }
+
+        await _uow.Orders.AddAsync(order);
+        await _uow.SaveChangesAsync(ct);
+        return order.Id;
+    }
+}
+
+// ── QUERY (read operation) ─────────────────────────────────────
+public record GetOrderByIdQuery(int Id) : IRequest<OrderDto>;
+
+public class GetOrderByIdHandler : IRequestHandler<GetOrderByIdQuery, OrderDto> {
+    private readonly IOrderRepository _repo;
+    private readonly IMapper          _mapper;
+
+    public async Task<OrderDto> Handle(GetOrderByIdQuery query, CancellationToken ct) {
+        var order = await _repo.GetByIdAsync(query.Id)
+            ?? throw new NotFoundException($"Order {query.Id} not found");
+        return _mapper.Map<OrderDto>(order);
+    }
+}
+
+// ── PIPELINE BEHAVIOR — cross-cutting concerns ─────────────────
+// Validation Behavior (runs FluentValidation before every handler)
+public class ValidationBehavior<TReq, TRes>
+    : IPipelineBehavior<TReq, TRes> where TReq : IRequest<TRes> {
+    private readonly IEnumerable<IValidator<TReq>> _validators;
+
+    public async Task<TRes> Handle(TReq req, RequestHandlerDelegate<TRes> next, CancellationToken ct) {
+        if (!_validators.Any()) return await next();
+        var ctx     = new ValidationContext<TReq>(req);
+        var results = await Task.WhenAll(_validators.Select(v => v.ValidateAsync(ctx, ct)));
+        var errors  = results.SelectMany(r => r.Errors).Where(e => e != null).ToList();
+        if (errors.Any()) throw new ValidationException(errors);
+        return await next();
+    }
+}
+
+// Logging Behavior
+public class LoggingBehavior<TReq, TRes> : IPipelineBehavior<TReq, TRes> {
+    private readonly ILogger<LoggingBehavior<TReq,TRes>> _log;
+    public async Task<TRes> Handle(TReq req, RequestHandlerDelegate<TRes> next, CancellationToken ct) {
+        _log.LogInformation("Handling {Name} {@Request}", typeof(TReq).Name, req);
+        var sw = Stopwatch.StartNew();
+        var res = await next();
+        _log.LogInformation("Handled {Name} in {Ms}ms", typeof(TReq).Name, sw.ElapsedMilliseconds);
+        return res;
+    }
+}
+
+// ── CONTROLLER — thin, just dispatches ────────────────────────
+[ApiController, Route("api/[controller]"), Authorize]
+public class OrdersController : ControllerBase {
+    private readonly IMediator _mediator;
+    public OrdersController(IMediator mediator) => _mediator = mediator;
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+        => Ok(await _mediator.Send(new GetOrderByIdQuery(id)));
+
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateOrderCommand cmd) {
+        var id = await _mediator.Send(cmd);
+        return CreatedAtAction(nameof(GetById), new { id }, new { id });
+    }
+}`,lang:"csharp"},
+
+{id:67,level:"advanced",q:"Complete DI Registration — Program.cs wiring everything together",
+code:`// ─────────────────────────────────────────────────────────────────
+// MyApp.API — Program.cs (production-ready DI setup)
+// ─────────────────────────────────────────────────────────────────
+var builder = WebApplication.CreateBuilder(args);
+
+// ── CONFIGURATION ─────────────────────────────────────────────
+builder.Configuration.AddAzureKeyVault(
+    new Uri(builder.Configuration["KeyVault:Uri"]!),
+    new DefaultAzureCredential());
+
+// ── DATABASE ──────────────────────────────────────────────────
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(builder.Configuration["SqlConnectionString"],
+        sql => sql.EnableRetryOnFailure(3)));
+
+// ── REPOSITORIES (Scoped — per request) ───────────────────────
+builder.Services.AddScoped<IOrderRepository,    OrderRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IProductRepository,  ProductRepository>();
+builder.Services.AddScoped<IUnitOfWork,         UnitOfWork>();
+
+// ── CACHING (Singleton) ───────────────────────────────────────
+builder.Services.AddStackExchangeRedisCache(opt =>
+    opt.Configuration = builder.Configuration["Redis:Connection"]);
+builder.Services.AddSingleton<ICacheService, RedisCacheService>();
+
+// ── MEDIATР + BEHAVIORS ───────────────────────────────────────
+builder.Services.AddMediatR(cfg => {
+    cfg.RegisterServicesFromAssembly(typeof(CreateOrderCommand).Assembly);
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
+});
+
+// ── FLUENT VALIDATION ─────────────────────────────────────────
+builder.Services.AddValidatorsFromAssembly(typeof(CreateOrderCommand).Assembly);
+
+// ── AUTOMAPPER ────────────────────────────────────────────────
+builder.Services.AddAutoMapper(typeof(OrderMappingProfile).Assembly);
+
+// ── AUTH ──────────────────────────────────────────────────────
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(opt => {
+        opt.TokenValidationParameters = new() {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)),
+            ValidateIssuer = true,
+            ValidIssuer    = builder.Configuration["Jwt:Issuer"],
+            ValidateAudience = true,
+            ValidAudience    = builder.Configuration["Jwt:Audience"],
+            ValidateLifetime = true,
+            ClockSkew        = TimeSpan.Zero
+        };
+        // SignalR token from query string
+        opt.Events = new JwtBearerEvents {
+            OnMessageReceived = ctx => {
+                var token = ctx.Request.Query["access_token"];
+                if (!string.IsNullOrEmpty(token) && ctx.Request.Path.StartsWithSegments("/hubs"))
+                    ctx.Token = token;
+                return Task.CompletedTask;
+            }
+        };
+    });
+
+// ── SIGNALR ───────────────────────────────────────────────────
+builder.Services.AddSignalR()
+    .AddStackExchangeRedis(builder.Configuration["Redis:Connection"]!);
+
+// ── RATE LIMITING ─────────────────────────────────────────────
+builder.Services.AddRateLimiter(opt => {
+    opt.AddFixedWindowLimiter("api", o => {
+        o.PermitLimit = 100; o.Window = TimeSpan.FromMinutes(1);
+    });
+    opt.RejectionStatusCode = 429;
+});
+
+// ── API VERSIONING ────────────────────────────────────────────
+builder.Services.AddApiVersioning(opt => {
+    opt.DefaultApiVersion = new ApiVersion(1, 0);
+    opt.AssumeDefaultVersionWhenUnspecified = true;
+    opt.ReportApiVersions = true;
+});
+
+// ── CORS ──────────────────────────────────────────────────────
+builder.Services.AddCors(opt => opt.AddPolicy("AppPolicy", p =>
+    p.WithOrigins(builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()!)
+     .AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+app.UseRateLimiter();
+app.UseCors("AppPolicy");
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseMiddleware<GlobalExceptionMiddleware>();
+app.MapControllers();
+app.MapHub<OrderHub>("/hubs/orders");
+app.Run();`,lang:"csharp"},
+
+{id:68,level:"advanced",q:"Global Exception Middleware + Result Pattern — production error handling",
+code:`// ── GLOBAL EXCEPTION MIDDLEWARE ──────────────────────────────────
+public class GlobalExceptionMiddleware {
+    private readonly RequestDelegate _next;
+    private readonly ILogger<GlobalExceptionMiddleware> _log;
+
+    public GlobalExceptionMiddleware(RequestDelegate next, ILogger<GlobalExceptionMiddleware> log) {
+        _next = next; _log = log;
+    }
+
+    public async Task InvokeAsync(HttpContext ctx) {
+        try { await _next(ctx); }
+        catch (Exception ex) { await HandleAsync(ctx, ex); }
+    }
+
+    private async Task HandleAsync(HttpContext ctx, Exception ex) {
+        var (status, title) = ex switch {
+            ValidationException v  => (400, string.Join("; ", v.Errors.Select(e => e.ErrorMessage))),
+            NotFoundException  nf  => (404, nf.Message),
+            UnauthorizedException  => (401, "Unauthorized"),
+            ForbiddenException     => (403, "Forbidden"),
+            _                      => (500, "An unexpected error occurred")
+        };
+
+        if (status == 500) _log.LogError(ex, "Unhandled exception");
+
+        ctx.Response.StatusCode  = status;
+        ctx.Response.ContentType = "application/problem+json";
+
+        var problem = new ProblemDetails {
+            Status   = status,
+            Title    = title,
+            Instance = ctx.Request.Path,
+            Extensions = { ["traceId"] = ctx.TraceIdentifier }
+        };
+        await ctx.Response.WriteAsJsonAsync(problem);
+    }
+}
+
+// ── RESULT PATTERN — avoid exceptions for expected failures ──────
+public class Result<T> {
+    public bool    IsSuccess { get; }
+    public T?      Value     { get; }
+    public string? Error     { get; }
+
+    private Result(bool ok, T? val, string? err) {
+        IsSuccess = ok; Value = val; Error = err;
+    }
+
+    public static Result<T> Success(T value) => new(true, value, null);
+    public static Result<T> Failure(string error) => new(false, default, error);
+}
+
+// Usage
+public async Task<Result<OrderDto>> GetOrderAsync(int id) {
+    var order = await _repo.GetByIdAsync(id);
+    return order == null
+        ? Result<OrderDto>.Failure($"Order {id} not found")
+        : Result<OrderDto>.Success(_mapper.Map<OrderDto>(order));
+}`,lang:"csharp"},
+
+{id:69,level:"advanced",q:"Complete Folder Structure with files — what goes where",
+a:`Production Clean Architecture folder structure showing exactly what file lives in each layer.`,
+code:`MyApp/
+├── src/
+│   │
+│   ├── MyApp.Domain/                      ← No NuGet dependencies
+│   │   ├── Common/
+│   │   │   ├── BaseEntity.cs              (Id, CreatedAt, UpdatedAt, DomainEvents)
+│   │   │   ├── DomainException.cs
+│   │   │   └── IDomainEvent.cs
+│   │   ├── Entities/
+│   │   │   ├── Order.cs
+│   │   │   ├── OrderItem.cs
+│   │   │   ├── Customer.cs
+│   │   │   └── Product.cs
+│   │   ├── ValueObjects/
+│   │   │   ├── Money.cs
+│   │   │   └── Address.cs
+│   │   └── Events/
+│   │       ├── OrderCreatedEvent.cs
+│   │       └── OrderApprovedEvent.cs
+│   │
+│   ├── MyApp.Application/                 ← MediatR, FluentValidation, AutoMapper
+│   │   ├── Common/
+│   │   │   ├── Behaviors/
+│   │   │   │   ├── ValidationBehavior.cs
+│   │   │   │   ├── LoggingBehavior.cs
+│   │   │   │   └── CachingBehavior.cs
+│   │   │   ├── Exceptions/
+│   │   │   │   ├── NotFoundException.cs
+│   │   │   │   └── ValidationException.cs
+│   │   │   └── Interfaces/
+│   │   │       ├── IUnitOfWork.cs
+│   │   │       ├── IOrderRepository.cs
+│   │   │       ├── ICacheService.cs
+│   │   │       └── IEmailService.cs
+│   │   ├── Orders/
+│   │   │   ├── Commands/
+│   │   │   │   ├── CreateOrder/
+│   │   │   │   │   ├── CreateOrderCommand.cs
+│   │   │   │   │   ├── CreateOrderHandler.cs
+│   │   │   │   │   └── CreateOrderValidator.cs
+│   │   │   │   └── ApproveOrder/
+│   │   │   │       ├── ApproveOrderCommand.cs
+│   │   │   │       └── ApproveOrderHandler.cs
+│   │   │   ├── Queries/
+│   │   │   │   ├── GetOrderById/
+│   │   │   │   │   ├── GetOrderByIdQuery.cs
+│   │   │   │   │   └── GetOrderByIdHandler.cs
+│   │   │   │   └── GetOrdersByCustomer/
+│   │   │   │       ├── GetOrdersByCustomerQuery.cs
+│   │   │   │       └── GetOrdersByCustomerHandler.cs
+│   │   │   └── DTOs/
+│   │   │       ├── OrderDto.cs
+│   │   │       └── OrderItemDto.cs
+│   │   └── Mappings/
+│   │       └── OrderMappingProfile.cs
+│   │
+│   ├── MyApp.Infrastructure/              ← EF Core, Redis, Azure, external APIs
+│   │   ├── Persistence/
+│   │   │   ├── AppDbContext.cs
+│   │   │   ├── UnitOfWork.cs
+│   │   │   ├── Repositories/
+│   │   │   │   ├── OrderRepository.cs
+│   │   │   │   ├── CustomerRepository.cs
+│   │   │   │   └── ProductRepository.cs
+│   │   │   └── Configurations/
+│   │   │       ├── OrderConfiguration.cs  (IEntityTypeConfiguration)
+│   │   │       └── ProductConfiguration.cs
+│   │   ├── Caching/
+│   │   │   └── RedisCacheService.cs
+│   │   ├── Notifications/
+│   │   │   ├── FcmSender.cs
+│   │   │   └── EmailSender.cs
+│   │   ├── Storage/
+│   │   │   └── AzureBlobService.cs
+│   │   └── DependencyInjection.cs         (extension method: services.AddInfrastructure())
+│   │
+│   └── MyApp.API/                         ← ASP.NET Core, Controllers, Middleware
+│       ├── Controllers/
+│       │   ├── OrdersController.cs
+│       │   ├── AuthController.cs
+│       │   └── CustomersController.cs
+│       ├── Hubs/
+│       │   └── OrderHub.cs               (SignalR)
+│       ├── Middleware/
+│       │   └── GlobalExceptionMiddleware.cs
+│       └── Program.cs
+│
+└── tests/
+    ├── MyApp.UnitTests/
+    │   ├── Domain/
+    │   │   └── OrderTests.cs             (domain logic tests — no mocks needed)
+    │   └── Application/
+    │       └── CreateOrderHandlerTests.cs (mock IUnitOfWork)
+    └── MyApp.IntegrationTests/
+        ├── OrdersControllerTests.cs      (WebApplicationFactory)
+        └── TestDbFixture.cs`,lang:"text"},
+]},
+]; // ← END OF DATA ARRAY
+// ─── ENGINE ──────────────────────────────────────────────────────────
+let lvl = 'all', done = new Set();
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function buildTable(rows){
+  let h='<table class="ct"><thead><tr>';
+  rows[0].forEach(c=> h+=`<th>${c}</th>`);
+  h+='</tr></thead><tbody>';
+  rows.slice(1).forEach(r=>{ h+='<tr>'; r.forEach(c=>h+=`<td>${c}</td>`); h+='</tr>'; });
+  return h+'</tbody></table>';
+}
+
+function buildCode(code, lang){
+  const id = 'cb_'+(Math.random()*1e9|0);
+  return `<div class="cb"><div class="cbh"><span class="cbl">${lang||'code'}</span>`+
+    `<button class="cpb" onclick="copyCode('${id}',this)">Copy</button></div>`+
+    `<pre><code id="${id}">${esc(code)}</code></pre></div>`;
+}
+
+function copyCode(id, btn){
+  const text = document.getElementById(id)?.innerText||'';
+  navigator.clipboard.writeText(text).then(()=>{
+    btn.textContent='Copied!'; btn.classList.add('ok');
+    setTimeout(()=>{ btn.textContent='Copy'; btn.classList.remove('ok'); },2000);
+  });
+}
+
+function toggleAnswer(id){
+  const el = document.getElementById('a_'+id);
+  if(el) el.classList.toggle('open');
+}
+
+function toggleSection(el){
+  const body = el.closest('.section-wrap').querySelector('.section-body');
+  const arrow = el.querySelector('.sec-arrow');
+  if(body){ body.style.display = body.style.display==='none'?'':'none'; arrow.classList.toggle('open'); }
+}
+
+function markDone(id, btn){
+  if(done.has(id)){ done.delete(id); btn.textContent='☐'; btn.classList.remove('done'); }
+  else { done.add(id); btn.textContent='✅'; btn.classList.add('done'); }
+  const card = document.getElementById('card_'+id);
+  if(card) card.classList.toggle('done-card', done.has(id));
+  updateStats();
+}
+
+function updateStats(){
+  let total=0,basic=0,interm=0,adv=0;
+  DATA.forEach(s=>s.questions.forEach(q=>{
+    total++; if(q.level==='basic')basic++; else if(q.level==='intermediate')interm++; else adv++;
+  }));
+  document.getElementById('totalStat').textContent=total;
+  document.getElementById('basicStat').textContent=basic;
+  document.getElementById('intStat').textContent=interm;
+  document.getElementById('advStat').textContent=adv;
+  document.getElementById('doneStat').textContent=done.size;
+  document.getElementById('pbar').style.width=(total?done.size/total*100:0).toFixed(1)+'%';
+}
+
+function render(){
+  const root = document.getElementById('root');
+  const q = document.getElementById('searchBox').value.toLowerCase().trim();
+  root.innerHTML='';
+  let found=0;
+
+  DATA.forEach((sec,si)=>{
+    const filtered = sec.questions.filter(qu=>{
+      if(lvl!=='all' && qu.level!==lvl) return false;
+      if(q && !qu.q.toLowerCase().includes(q) && !(qu.a||'').toLowerCase().includes(q)) return false;
+      return true;
+    });
+    if(!filtered.length) return;
+    found += filtered.length;
+
+    const wrap = document.createElement('div');
+    wrap.className='section-wrap';
+    const borderColor = sec.color||'#3b82f6';
+    wrap.style.borderColor=borderColor+'44';
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className='section-header';
+    hdr.style.borderLeft=`4px solid ${borderColor}`;
+    hdr.style.background=`linear-gradient(90deg,${borderColor}18,transparent)`;
+    hdr.innerHTML=`<span class="sec-icon">${sec.icon}</span>`+
+      `<span class="sec-title" style="color:${borderColor}">${sec.section}</span>`+
+      `<span class="sec-count" style="color:${borderColor};border-color:${borderColor}44">${filtered.length} Q</span>`+
+      `<span class="sec-arrow open">▶</span>`;
+    hdr.onclick = ()=>toggleSection(hdr);
+    wrap.appendChild(hdr);
+
+    // Body
+    const body = document.createElement('div');
+    body.className='section-body';
+
+    ['basic','intermediate','advanced'].forEach(level=>{
+      const qs = filtered.filter(q=>q.level===level);
+      if(!qs.length) return;
+      const colors={basic:'#4ade80',intermediate:'#fbbf24',advanced:'#f87171'};
+      const labels={basic:'🟢 Basic',intermediate:'🟡 Intermediate',advanced:'🔴 Advanced'};
+
+      const strip = document.createElement('div');
+      strip.className='level-strip';
+      strip.style.color=colors[level];
+      strip.innerHTML=`<span>${labels[level]}</span><span style="color:#334155;margin-left:4px">(${qs.length})</span>`;
+      body.appendChild(strip);
+
+      qs.forEach(qu=>{
+        const card = document.createElement('div');
+        card.className=`qa-card ${level}${done.has(qu.id)?' done-card':''}`;
+        card.id='card_'+qu.id;
+
+        // Question row
+        const qrow = document.createElement('div');
+        qrow.className='qa-q';
+        qrow.onclick=(e)=>{ if(!e.target.classList.contains('check-btn')) toggleAnswer(qu.id); };
+
+        const doneClass = done.has(qu.id)?'done':'';
+        qrow.innerHTML=`<span class="qnum">Q${qu.id}</span>`+
+          `<span class="qtext">${qu.q}</span>`+
+          `<span class="diff ${level}">${level.charAt(0).toUpperCase()+level.slice(1)}</span>`+
+          `<button class="check-btn ${doneClass}" onclick="markDone(${qu.id},this)">${done.has(qu.id)?'✅':'☐'}</button>`;
+        card.appendChild(qrow);
+
+        // Answer
+        const ans = document.createElement('div');
+        ans.className='qa-a';
+        ans.id='a_'+qu.id;
+
+        let html='';
+        if(qu.a) html+=`<div class="ans-text">${qu.a}</div>`;
+        if(qu.table) html+=buildTable(qu.table);
+        if(qu.code) html+=buildCode(qu.code, qu.lang||'code');
+        ans.innerHTML=html;
+        card.appendChild(ans);
+        body.appendChild(card);
+      });
+    });
+    wrap.appendChild(body);
+    root.appendChild(wrap);
+  });
+
+  if(!found) root.innerHTML='<div class="no-results">🔍 No questions match. Try a different search.</div>';
+  updateStats();
+}
+
+function setLevel(l, btn){
+  lvl=l;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function doFilter(){ render(); }
+function expandAll(){ document.querySelectorAll('.qa-a').forEach(e=>e.classList.add('open')); }
+function collapseAll(){ document.querySelectorAll('.qa-a').forEach(e=>e.classList.remove('open')); }
+function resetProgress(){ done.clear(); render(); }
+
+render();
+</script>
+</body>
+</html>
